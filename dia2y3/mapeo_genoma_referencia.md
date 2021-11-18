@@ -111,7 +111,7 @@ herramientas comunes para analizar texto en Unix.
 1.  Para el archivo de lecturas que descargaste usando `wget`: Cuenta el
     número de líneas y el número de lecturas que contiene el archivo.
 
-2.  Para los archivos en el directorio `reads_short`: Escoge un par de
+2.  Para los archivos en el directorio `reads_heliconius`: Escoge un par de
     muestras y analiza los pares de lecturas (R1 y R2) de estas
     muestras. Cuenta el número de líneas y de lecturas de R1 y R2.
     ¿Cuántas líneas tienen? ¿Cuántas lecturas tienen? ¿R1 y R2 tienen el
