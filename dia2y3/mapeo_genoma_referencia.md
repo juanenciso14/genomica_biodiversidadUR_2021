@@ -186,9 +186,10 @@ Corriendo fastqc con los datos de *Heliconius*:
 5.  Antes de enviar tu script a la cola de trabajo muéstraselo al
     personal docente para revisar que se ve bien.
 
-6.  Cuando `fastqc` termine de correr, todos los archivos resultantes
-    deben quedar en el directorio especificado usando `-o`. Copia este
-    directorio con todo su contenido a tu máquina.
+6.  Cuando `fastqc` termine de correr, todos los archivos resultantes deben
+    quedar en el directorio especificado usando `-o`. Copia este directorio con
+    todo su contenido a tu máquina. Utiliza `scp` o `mailx` para transferir el
+    contenido.
 
 7.  Usando tu interfaz gráfica ve hasta el directorio que acabas de
     copiar. Verás 4 archivos; dos comprimidos y dos con extensión
