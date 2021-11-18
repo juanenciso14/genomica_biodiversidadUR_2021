@@ -196,10 +196,14 @@ Corriendo fastqc con los datos de *Heliconius*:
     lecturas de cada muestra (`_1` y `_2`). Abre cada uno de los
     archivos `.html` usando tu navegador web y explora su contenido, qué
     observas?
+    
+8. Si tienes tiempo repite el análisis de calidades para otros individuos y
+   compara los resultados entre individuos. Reto ¿Puedes hacerlo rápidamente
+   para todos los individuos?
 
 ## Buenas y malas calidades
 
-Sin mucha experiencia no es fácul saber cuándo determinamos que un
+Sin mucha experiencia no es fácil saber cuándo determinamos que un
 experimento de secuenciación resultó mal para una o varias muestras. En
 este punto podemos referirnos a ejemplos de buenas y malas calidades
 para ver en qué casos un set de lecturas puede no ser apropiado.
