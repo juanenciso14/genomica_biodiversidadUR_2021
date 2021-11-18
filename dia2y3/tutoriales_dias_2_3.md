@@ -1,13 +1,13 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-# Índice
+**Table of Contents**
 
-- [Que és *de novo* <a name = "denovo"></a>](#que-és-de-novo-a-name--denovoa)
+- [Qué es *de novo* <a name = "denovo"></a>](#qué-es-de-novo-a-name--denovoa)
 - [Datos de ejemplo <a name = "dato"></a>](#datos-de-ejemplo-a-name--datoa)
     - [*Lupinus* (Contreras-Ortiz, et al., 2018)](#lupinus-contreras-ortiz-et-al-2018)
 - [Software STACKS <a name = "stacks"></a>](#software-stacks-a-name--stacksa)
     - [-](#-)
-- [*process_radtags* <a name = "process_radtags"></a>](#process_radtags-a-name--process_radtagsa)
-- [*ustacks* <a name = "ustacks"></a>](#ustacks-a-name--ustacksa)
+    - [*process_radtags* <a name = "process_radtags"></a>](#process_radtags-a-name--process_radtagsa)
+    - [*ustacks* <a name = "ustacks"></a>](#ustacks-a-name--ustacksa)
     - [*cstacks* <a name = "cstacks"></a>](#cstacks-a-name--cstacksa)
     - [*sstacks* <a name = "sstacks"></a>](#sstacks-a-name--sstacksa)
     - [*tsv2bam* <a name = "tsv2bam"></a>](#tsv2bam-a-name--tsv2bama)
@@ -42,7 +42,7 @@
 <!-- markdown-toc end -->
 
 
-# Que és *de novo* <a name = "denovo"></a>
+# Qué es *de novo* <a name = "denovo"></a>
 
 *De novo* es una forma de ensamblaje del genoma sin la ayuda de datos genómicos
 de referencia, así és, un ensamblaje inicial de un genoma. Esto asume que no se
@@ -147,7 +147,7 @@ sbatch o en la línea de comando: `module load stacks/2.59`
 
 ---
 
-# *process_radtags* <a name = "process_radtags"></a>
+## *process_radtags* <a name = "process_radtags"></a>
 
 En un análisis típico, los datos estarán en formato FASTQ, que es el formato que
 normalmente se recibe de un secuenciador de Next-gen, como el Illumina. El
@@ -206,7 +206,7 @@ Hoy usaremos estas opciones (para otras consulte el manual de Stacks):
 
 ---
 
-# *ustacks* <a name = "ustacks"></a>
+## *ustacks* <a name = "ustacks"></a>
 
 *Ustacks* alineará para cada muestra las secuencias cortas en alelos putativos.
 Al comparar estos, se formará un conjunto de loci putativos y detectará SNP en
