@@ -971,7 +971,13 @@ trabajar.
     **Atención!:** Muéstrale el resultado de esta operación al personal docente
     antes de continuar. **Importante:** Copia el contenido de
     `sitios_retenidos_cont.txt` en un nuevo archivo de texto en Centauro usando
-    `nano` para que puedas usar el archivo que creaste en `vcftools`.
+    `nano` para que puedas usarl en `vcftools`. Alternativamente puedes
+    transferirlo desde tu máquina a Centauro usando `scp`.
+    
+    ```shell
+    scp -i /ruta/a/workshopX.pem -P 53841 /ruta/a/sitios_retenidos_cont.txt \
+        workshopX@loginpub-hpc.urosario.edu.co:/ruta/de/destino/
+    ```
 
     Aplicamos el filtro: Le decimos a `vcftools` que debe dejar
     únicamente estos sitios y descartar el resto. Usamos la opción

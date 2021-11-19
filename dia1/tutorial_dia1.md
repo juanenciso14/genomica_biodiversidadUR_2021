@@ -563,7 +563,7 @@ el script que escriba en `nano`.
 
     # transfiriendo hacia CENTAURO
     scp -i <ruta.llave.pem> -P 53841 /rutal/local/archivo \
-        usuario@loginpub-hpc.urosario.edu.co:/ruta/para/copiar/
+        usuario@loginpub-hpc.urosario.edu.co:/ruta/de/destino/
     ```
 
 7.  :warning: Envíe el archivo resultante (`bash_loops1.tar.gz`) a su correo
