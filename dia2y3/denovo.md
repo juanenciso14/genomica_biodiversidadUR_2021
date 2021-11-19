@@ -56,10 +56,10 @@ Stacks identifica los loci en un conjunto de individuos, usando *de novo* o alin
 ![Pasos realizados en Stacks (Foto de [Stacks](https://catchenlab.life.illinois.edu/stacks/)).](../Imagenes/stacks_full_pipeline.png)
 
 ### Antes de empezar:
-Vamos a copiar los datos brutos que analizaremos a su usuario. Los datos **all.fastq.gz** se encuentran en la carpeta compartida `~/shared/denovo`. Ejecute el comando `scp -r` para copiar la carpeta con los datos a tu usuario.  
-Además, creemos una carpeta donde vamos poner todos los resultados de Stacks. Entonces en tu directorio `home/denovo` y usando el comando `mkdir` generemos la carpeta llamada `stacks`. Ahora estamos listos para hacer el primero paso del pipeline :)
+Vamos a copiar los datos brutos que analizaremos a su usuario. Los datos **all.fastq.gz** se encuentran en la carpeta compartida `/home/workshopXX/shared/denovo`. Ejecute el comando `scp -r` para copiar la carpeta con los datos a tu usuario `/home/workshopXX/data`.  
+Además, creemos una carpeta donde vamos poner todos los resultados de Stacks. Entonces entra en tu directorio `/home/workshopXX/data/denovo` y usando el comando `mkdir` generemos la carpeta llamada `01_stacks` (¡por favor, genere la carpeta con este nombre específico!). Ahora estamos listos para hacer el primero paso del pipeline :)
 
-Además, en el clúster para cargar Stacks necesitamos usar este comando en el sbatch o en la línea de comando: `module load stacks/2.59`
+Además, en el clúster para cargar Stacks necesitamos usar este comando en el sbatch o en la línea de comando: `module load stacks/2.60`
 
 ---
 
@@ -83,7 +83,7 @@ Hoy usaremos estas opciones (para otras consulte el manual de Stacks):
 `-p` = ruta al directorio donde esta el archivo fastq.gz (sin el nombre del archivo).  
 `-i` = tipo de archivo de entrada, ya sea 'fastq', 'gzfastq' (fastq comprimido con gzip), 'bam' o 'bustard'.  
 `-b` = ruta a un archivo que contiene el listado de los barcodes en la primera columna y en la segunda el nombre de la muestra correspondiente (mirar "Archivos necesarios" para más info).  
-`-o` = ruta donde se van a poner los archivos procesados (`stacks`).  
+`-o` = ruta donde se van a poner los archivos procesados (`01_stacks`).  
 `-q, --quality` = descartar lecturas con baja calidad.  
 `-E` = especificar cómo se codifican las puntuaciones de calidad, 'phred33' (Illumina 1.8 + / Sanger, predeterminado) o 'phred64' (Illumina 1.3-1.5) (usaremos 'phred33').  
 `-D` = capturar lecturas descartadas en un archivo.  
@@ -116,7 +116,7 @@ Hoy usaremos estas opciones (para otras consulte el manual de Stacks):
 Tenga en cuenta que un comando *ustacks* debe realizarse para cada muestra.  
 `-t` = tipo de archivo de entrada. Tipos admitidos: fasta, fastq, gzfasta o gzfastq (predeterminado: adivinar).  
 `-f` = ruta del archivo de entrada con el nombre del archivo y la extensión (.fq.gz).  
-`-o` = ruta donde escribir los resultados (carpeta `stacks`).  
+`-o` = ruta donde escribir los resultados (carpeta `01_stacks`).  
 `-i` = un ID numérico único para cada muestra (1,2,3,...).  
 `-m` = profundidad mínima de cobertura requerida para crear un stack (predeterminado 3, usaremos 5).  
 `-M` = distancia máxima (en nucleótidos) permitida entre stacks (predeterminado 2).  
@@ -146,7 +146,7 @@ Crea un catálogo a partir de cualquier conjunto de muestras procesadas por *ust
 `L_alopecuroides_NCO42_10<TAB>L_alopecuroides`  
 
 **Parámetros:**  
-`-P, --in_path` = directorio de entrada que tenga los archivos generados por Stacks hasta ahora (`stacks`).  
+`-P, --in_path` = directorio de entrada que tenga los archivos generados por Stacks hasta ahora (`01_stacks`).  
 `-M,--popmap` = ruta a un mapa de población (mirar archivos necesarios).  
 `-p` = habilitar la ejecución paralela con número de subprocesos (usaremos 2).  
 `-n` = número de discrepancias permitidas entre los loci putativos cuando se crea el catálogo (predeterminado 1, usaremos 2).
@@ -172,7 +172,7 @@ Los conjuntos de loci putativos construidos por *ustacks* se van a buscar en el 
 - mapa de población (lo mismo que generamos para *cstacks*)
 
 **Parámetros:**  
-`-P, --in_path` = directorio de entrada que tenga los archivos generados por Stacks hasta ahora (`stacks`).  
+`-P, --in_path` = directorio de entrada que tenga los archivos generados por Stacks hasta ahora (`01_stacks`).  
 `-M,--popmap` = ruta a un mapa de población.  
 `-p,--threads` = habilitar la ejecución paralela con número de subprocesos (usaremos 2).  
 
@@ -195,7 +195,7 @@ El programa *tsv2bam* transpondrá los datos para que estén orientados por locu
 - mapa de población (lo mismo que generamos para *cstacks*)
 
 **Parámetros:**  
-`-P,--in-dir` = directorio de entrada que tenga los archivos generados por Stacks hasta ahora (`stacks`).  
+`-P,--in-dir` = directorio de entrada que tenga los archivos generados por Stacks hasta ahora (`01_stacks`).  
 `-M,--popmap` = ruta a un mapa de población.  
 `-t` = habilitar la ejecución paralela con número de subprocesos (predeterminado 1, usaremos 2).
 
@@ -218,7 +218,7 @@ El programa *gstacks* examinará un conjunto de datos RAD observando a todos los
 - mapa de población (lo mismo que generamos para *cstacks*)
 
 **Parámetros:**  
-`-P` = directorio de entrada que contiene archivos `*.matches.bam` creados por el pipeline *de novo* de Stacks (`stacks`).  
+`-P` = directorio de entrada que contiene archivos `*.matches.bam` creados por el pipeline *de novo* de Stacks (`01_stacks`).  
 `-M,--popmap` = ruta a un mapa de población.
 
 ⚠️ <span style="color:red">reportar línea de comando</spam> ⚠️
@@ -242,7 +242,7 @@ El programa *populations* analizará una población de muestras individuales cal
 - mapa de población (lo mismo que generamos para *cstacks*)
 
 **Parámetros:**   
-`-P,--in_path` = directorio de entrada que tenga los archivos generados por Stacks (`stacks`).  
+`-P,--in_path` = directorio de entrada que tenga los archivos generados por Stacks (`01_stacks`).  
 `-O,--out_path` = ruta a un directorio donde escribir los archivos de salida. (predeterminado al valor de -P.)  
 `-M,--popmap` = ruta a un mapa de población (lo mismo que se usó antes)  
 `-t,--threads` = habilitar la ejecución paralela con número de subprocesos (predeterminado 1, usaremos 2)  
