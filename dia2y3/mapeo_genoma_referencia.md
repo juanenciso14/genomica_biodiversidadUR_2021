@@ -244,7 +244,7 @@ Sigue estos pasos para descargarlo:
 4.  Dentro de `v4` ve a la carpeta `sequence`  
     ![](../Imagenes/Lepbase_S3.png)
 5.  Dentro de `sequence` busca
-    `Heliconius_melpomene_melpomene_Hmel2.5.scafolds.fa.gz`  
+    `Heliconius_melpomene_melpomene_Hmel2.5.scaffolds.fa.gz`  
     ![](../Imagenes/Lepbase_S4.png)
 6.  Dale click derecho al enlace y selecciona `Copiar enlace`
 7.  Ve a tu carpeta de trabajo en el cluster y crea una nueva carpeta
@@ -300,8 +300,9 @@ Sigue estos pasos para descargarlo:
 
 ## Alineamiento de las lecturas
 
-Recursos computacionales: 2 procesadores, 4 GB de memoria, \~25 min de
-tiempo de ejecución.
+Recursos computacionales: 2 procesadores, 4 GB de memoria, \~25 min de tiempo de
+ejecución. En este y los siguientes pasos usa el archivo de fasta de referencia:
+`/home/workshopX/shared/referencia_hmel2.5/Hmel2.5_with_mtDNA.fa`.
 
 1.  Para este paso necesitamos escribir un script de bash usando `nano`
     (u otro editor de texto disponible en el cluster). Crea un nuevo

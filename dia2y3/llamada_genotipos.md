@@ -78,11 +78,30 @@ este [paper publicado en PNAS
     el nombre de la región que quieres extraer: La región que
     extraeremos corresponde al primer millón y medio de bases del
     scaffold `Hmel218003o` y la especificamos así:
-    `Hmel218003o:1-1500000`. Dale una extensión informativa a cada
-    archivo de salida: Estamos extrayendo parte del scaffold
-    `Hmel218003o`; te sugerimos usar `optixscaf` como parte del nombre
-    de los archivos resultantes (el scaffold `Hmel218003o` contiene al
-    gen *optix*, de ahí el nombre).
+    `Hmel218003o:1-1500000`. 
+    
+    Dale un nombre informativo a cada archivo de salida: Estamos extrayendo
+    parte del scaffold `Hmel218003o`; te sugerimos usar `optixscaf` como parte
+    del nombre de los archivos resultantes (el scaffold `Hmel218003o` contiene
+    al gen *optix*, de ahí el nombre). **Atención:** para hacer esto, al
+    interior del ciclo `for` debemos sustituir el sufijo del archivo de entrada
+    (`smallr.rmd.sort.bam`) por un sufijo más informativo
+    (`optixscaf.rmd.sort.bam`) y el resultado lo asignamos a una nueva variable.
+    Esto lo hacemos sustituyendo los respectivos textos en la expansión de la
+    variable del ciclo for. Por ejemplo, si tu variable del ciclo `for` se llama
+    `aln`, la sustitución la haces mediante la siguiente expresión:
+    
+    ```shell
+    # Sustituimios smallr.rmd.sort.bam por optixscaf.rmd.sort.bam
+    # en el nombre asignado a aln y le asignamos el resultado a la variable
+    # salida
+    salida=${aln%smallr.rmd.sort.bam}optixscaf.rmd.sort.bam
+    ```
+    
+    Después de hacer esto, en cada iteración del ciclo `for` la variable `aln`
+    debe tener el nombre original y la variable `salida` debe tener el nuevo
+    nombre del archivo de salida. Podemos usar estos dos nombres en nuestras
+    llamadas a `samtools`.
 
     La forma general de usar `samtools view` es:
 
@@ -102,6 +121,35 @@ este [paper publicado en PNAS
     # Los argumentos dentro de los parentesis cuadrados [] son opcionales
     # los argumentos dentro de los angulos <> son obligatorios
     samtools index [-@ threads] <in.bam>
+    ```
+    
+    Este script puede ser difícil de escribir bien, te mostramos como hacerlo.
+    
+    ```shell
+    #!/bin/bash
+    #SBATCH -p dev
+    #SBATCH -n 2
+    #SBATCH --mem=2000
+    #SBATCH --time=0-1:00
+
+    module load samtools
+
+    for aln in *smallr.rmd.sort.bam
+    do
+    
+    # ponemos el nombre del archivo de salida en una nueva variable
+    # sustituimos el sufijo anterior smallr.rmd.sort.bam
+    # por uno nuevo optixscaf.rmd.sort.bam
+    arch_salida=${aln%smallr.rmd.sort.bam}optixscaf.rmd.sort.bam
+
+    # extraemos la region de interes Hmel218003o:1-1500000
+    samtools view -@ 2 -b \
+        -o $arch_salida \
+        $aln Hmel218003o:1-1500000
+        
+    # construimos el indice del nuevo archivo
+    samtools index -@ 2 $arch_salida
+    done
     ```
 
 5.  **Atención!** Antes de enviar el trabajo a la cola muéstrale tu
@@ -193,11 +241,12 @@ partida para conocer las distintas perspectivas y recomendaciones al
 hacer este paso.
 
 En este caso usaremos
-[`bcftools`](https://samtools.github.io/bcftools/bcftools.html), que es
-parte de `samtools`, por su simplicidad de uso y velocidad de ejecución.
-En general, independientemente de la herramienta utilizada este es el
-paso más largo de todo el proceso, por eso trabajaremos con una región
-pequeña.
+[`bcftools`](https://samtools.github.io/bcftools/bcftools.html), que es parte de
+`samtools`, por su simplicidad de uso y velocidad de ejecución. En general,
+independientemente de la herramienta utilizada este es el paso más largo de todo
+el proceso, por eso trabajaremos con una región pequeña. Para este paso usa este
+archivo `fasta` de referencia:
+`/home/workshopX/shared/referencia_hmel2.5/Hmel2.5_with_mtDNA.fa`.
 
 **Sigue los pasos:**
 
@@ -218,7 +267,7 @@ pequeña.
     -   El archivo con la lista de alineamientos que creaste en el paso
         1
 
-    -   La ubicación del archivo `fasta` de referencia (ruta absoluta)
+    -   La ubicación del archivo `fasta` de referencia (ruta absoluta).
 
     -   El nombre del archivo de salida que quieres darle a tu `vcf` con
         los genotipos. No olvides que vamos a escribir un `vcf`
@@ -302,7 +351,7 @@ pequeña.
     
     ```shell
     #!/bin/bash
-    #SBATCH -p normal
+    #SBATCH -p dev
     #SBATCH -n 2
     #SBATCH --mem=8000
     #SBATCH --time=0-1:00
