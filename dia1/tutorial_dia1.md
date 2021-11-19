@@ -458,11 +458,14 @@ es la misma.
 
     ![](../Imagenes/ruta_archivo_pem.png)
 
-2.  Abra una nueva ventana de `Git Bash` o del emulador de terminal con
-    el que esté trabajando. Navegue su sistema usando los comandos
-    aprendidos para moverse en el sistema de archivos. Vaya a la carpeta
-    en donde puso su llave de acceso. Haga una lista de los archivos
-    en la carpeta, ¿ve la llave `.pem` dentro de esa carpeta?
+2.  Abra una nueva ventana de `Git Bash` o del emulador de terminal con el que
+    esté trabajando. Navegue su sistema usando los comandos aprendidos para
+    moverse en el sistema de archivos. Vaya a la carpeta en donde puso su llave
+    de acceso. Haga una lista de los archivos en la carpeta, ¿ve la llave `.pem`
+    dentro de esa carpeta? Antes de conectarse por primera vez al cluster
+    necesitamos cambiar los permisos del archivo `.pem`. En la carpeta donde
+    está la llave ó utilizando una ruta absoluta escribimos y ejecutamos `chmod
+    400 /ruta/a/workshopX.pem`.
 
 3.  Utilice secure shell (`ssh`) para abrir una conexión remota a
     Centauro. Utilice la opción `-i` para especificar la ruta a la llave
