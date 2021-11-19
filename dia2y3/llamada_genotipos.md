@@ -968,8 +968,10 @@ trabajar.
               col_names = FALSE)
     ```
 
-    **Atención!:** Muéstrale el resultado de esta operación al personal
-    docente antes de continuar.
+    **Atención!:** Muéstrale el resultado de esta operación al personal docente
+    antes de continuar. **Importante:** Copia el contenido de
+    `sitios_retenidos_cont.txt` en un nuevo archivo de texto en Centauro usando
+    `nano` para que puedas usar el archivo que creaste en `vcftools`.
 
     Aplicamos el filtro: Le decimos a `vcftools` que debe dejar
     únicamente estos sitios y descartar el resto. Usamos la opción
