@@ -466,21 +466,20 @@ Recursos computacionales: 2 procesadores, 4 GB de memoria, \~20 min de
 tiempo de ejecución. Este análisis lo vas a correr con el alineamiento
 resultante del paso anterior.
 
-1.  Tenemos que quitar los duplicados de PCR, estos pueden interferir
-    luego con el proceso de inferencia de alelos. Puedes encontrar
-    detalles sobre este proceso en [este paper de
-    Ebbert (2016)](http://ebbertlab.com/Ebbert_PCR_duplicates_BMC_Bioinformatics.pdf).
-    Para este proceso vamos a usar una suite de herramientas llamada
-    [`Picard Tools`](https://broadinstitute.github.io/picard/).
-    Específicamente queremos usar la herramienta
+1.  Tenemos que quitar los duplicados de PCR, estos pueden interferir luego con
+    el proceso de inferencia de alelos. Puedes encontrar detalles sobre este
+    proceso en [este paper de Kozarewa et al.
+    (2009)](https://www.nature.com/articles/nmeth.1311/email/correspondent/c1/new).
+    Para este proceso vamos a usar una suite de herramientas llamada [`Picard
+    Tools`](https://broadinstitute.github.io/picard/). Específicamente queremos
+    usar la herramienta
     [`MarkDuplicates`](https://broadinstitute.github.io/picard/command-line-overview.html#MarkDuplicates).
     En centauro `Picard tools` está en la ruta
-    `/opt/ohpc/pub/apps/picard-tools/2.18.15/picard.jar`. Es una
-    aplicación de `java` por lo tanto debes cargar el módulo de `java`
-    (para `picard-tools` necesitamos cargar la versión 8 de `java`, cuyo
-    módulo en el cluster es `java8/1.8.0.172`) y llamarla usando `4GB`
-    de memoria como máximo. La llamada a una aplicación de java se hace
-    usando la siguiente sintáxis:
+    `/opt/ohpc/pub/apps/picard-tools/2.18.15/picard.jar`. Es una aplicación de
+    `java` por lo tanto debes cargar el módulo de `java` (para `picard-tools`
+    necesitamos cargar la versión 8 de `java`, cuyo módulo en el cluster es
+    `java8/1.8.0.172`) y llamarla usando `4GB` de memoria como máximo. La
+    llamada a una aplicación de java se hace usando la siguiente sintáxis:
 
     ``` shell
     # Estructura basica de llamada a una app de java
