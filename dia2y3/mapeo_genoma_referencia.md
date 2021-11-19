@@ -155,21 +155,19 @@ Corriendo fastqc con los datos de *Heliconius*:
     que quieras. Yo, por ejemplo, lo llamé `TMP_DIR`. Ten a mano la ruta
     absoluta a este directorio (usa `pwd` y copia la ruta).
 
-2.  Crea un script de `bash` para enviar el trabajo a la cola del
-    cluster. Pide los recursos necesarios usando las directivas de
-    `SBATCH`, no olvides el `shebang`. Encuentra el módulo de `Fastqc`
-    en el cluster y cárgalo.
+2.  :warning: Crea un script de `bash` para enviar el trabajo a la cola del
+    cluster. Pide los recursos necesarios usando las directivas de `SBATCH`, no
+    olvides el `shebang`. Encuentra el módulo de `Fastqc` en el cluster y
+    cárgalo.
 
-3.  En tu script: Crea un directiorio y dale un nombre que identifique a
-    la muestra que vas a correr. Finaliza el nombre con el sufijo `_QC`.
+3.  :warning: En tu script: Crea un directiorio y dale un nombre que identifique
+    a la muestra que vas a correr. Finaliza el nombre con el sufijo `_QC`.
 
-4.  En tu script: Llama a `fastqc` con las opciones `-d <directorio>` y
-    `-o
-            <directorio>`. `-d` se usa para especificar el directorio en
-    el que `fastqc` escribirá algunos resultados intermedios
-    temporalmente. `-o` se usa para especificar el nombre o ruta del
-    directorio en el que se guardarán los resultados finales (varios
-    archivos).
+4.  :warning: En tu script: Llama a `fastqc` con las opciones `-d <directorio>`
+    y `-o <directorio>`. `-d` se usa para especificar el directorio en el que
+    `fastqc` escribirá algunos resultados intermedios temporalmente. `-o` se usa
+    para especificar el nombre o ruta del directorio en el que se guardarán los
+    resultados finales (varios archivos).
 
     La sintaxis para llamar a `fastqc` tiene la siguiente estructura,
     donde `seqfile1` y `seqfile2` son los archivos que contienen las
@@ -249,9 +247,9 @@ Sigue estos pasos para descargarlo:
 6.  Dale click derecho al enlace y selecciona `Copiar enlace`
 7.  Ve a tu carpeta de trabajo en el cluster y crea una nueva carpeta
     llamada `ref_hmel2.5`, cambia de directorio a esta carpeta.
-8.  Descarga el archivo de la referencia con `wget` pegando el enlace
-    que copiaste. Recuerda la ruta de ubicación de este archivo!
-    Regístrala en tu archivo de comandos.
+8.  :warning: Descarga el archivo de la referencia con `wget` pegando el enlace
+    que copiaste. Recuerda la ruta de ubicación de este archivo! Regístrala en
+    tu archivo de comandos.
 9.  Verifica que el archivo se haya descargado correctamente y que puede
     leerse y procesarse. Usa `zless -S` para visualizarlo. Usa `zcat` o
     `zgrep` para responder a la siguiente pregunta: ¿Cuántas secuencias
@@ -263,18 +261,17 @@ Sigue estos pasos para descargarlo:
 
 ## Preparando los archivos
 
-1.  Es necesario preparar el genoma de referencia creando una nueva
-    estructura de datos a partir del archivo `fasta` original. Esto lo
-    hacemos usando el comando `index` de `bwa`. La sintaxis es
-    `bwa index archivo.fa`, donde `archivo.fa` es la referencia en
-    formato `fasta`. La referencia puede estar comprimida en este caso
-    (`.gz`). Recuerda cargar el módulo `bwa` en centauro antes de crear
-    el índice. Este paso no tarda mucho tiempo ( 5min) y requiere pocos
-    recursos; puedes realizarlo en una sesión interactiva.
+1.  :warning: Es necesario preparar el genoma de referencia creando una nueva
+    estructura de datos a partir del archivo `fasta` original. Esto lo hacemos
+    usando el comando `index` de `bwa`. La sintaxis es `bwa index archivo.fa`,
+    donde `archivo.fa` es la referencia en formato `fasta`. La referencia puede
+    estar comprimida en este caso (`.gz`). Recuerda cargar el módulo `bwa` en
+    centauro antes de crear el índice. Este paso no tarda mucho tiempo ( 5min) y
+    requiere pocos recursos; puedes realizarlo en una sesión interactiva.
 
-2.  Luego de indexar es necesario crear un archivo de texto con la
+2.  :warning: Luego de indexar es necesario crear un archivo de texto con la
     información que usaremos para mapear nuestras lecturas al genoma de
-    referencia. Usa `nano` para crear un nuevo archivo de texto.  
+    referencia. Usa `atom` para crear un nuevo archivo de texto en tu máquina local.  
     Usa una línea por muestra y la siguiente estructura para cada
     línea:  
     Columna 1: La ruta completa al primer archivo de lecturas de la
@@ -302,10 +299,11 @@ Sigue estos pasos para descargarlo:
 
 Recursos computacionales: 2 procesadores, 4 GB de memoria, \~25 min de tiempo de
 ejecución. En este y los siguientes pasos usa el archivo de fasta de referencia:
-`/home/workshopX/shared/referencia_hmel2.5/Hmel2.5_with_mtDNA.fa`.
+`/home/workshopX/shared/referencia_hmel2.5/Hmel2.5_with_mtDNA.fa`. :warning:
+Debes enviar el script que escribas para hacer el alineamiento.
 
-1.  Para este paso necesitamos escribir un script de bash usando `nano`
-    (u otro editor de texto disponible en el cluster). Crea un nuevo
+1.  Para este paso necesitamos escribir un script de bash usando
+    `nano` (u otro editor de texto disponible en el cluster). Crea un nuevo
     archivo de texto usando el editor y ponle un nombre informativo, por
     ejemplo: `mapeo_bwa.sh`
 
@@ -462,9 +460,9 @@ ejecución. En este y los siguientes pasos usa el archivo de fasta de referencia
 
 ## Quitando duplicados de PCR
 
-Recursos computacionales: 2 procesadores, 4 GB de memoria, \~20 min de
-tiempo de ejecución. Este análisis lo vas a correr con el alineamiento
-resultante del paso anterior.
+Recursos computacionales: 2 procesadores, 4 GB de memoria, \~20 min de tiempo de
+ejecución. Este análisis lo vas a correr con el alineamiento resultante del paso
+anterior. :warning: Debes enviar el script que crees para remover duplicados.
 
 1.  Tenemos que quitar los duplicados de PCR, estos pueden interferir luego con
     el proceso de inferencia de alelos. Puedes encontrar detalles sobre este

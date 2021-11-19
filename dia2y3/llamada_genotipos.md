@@ -58,7 +58,8 @@ esta [perspectiva
 este [paper publicado en PNAS
 (2017).](https://www.pnas.org/content/114/40/10707)
 
-**Sigue los pasos:**
+**Sigue los pasos:** :warning: Debes enviar el script que escribas para
+sub-muestrear los alineamientos.
 
 1.  Crea un script de `bash` usando `nano` y solicita los recursos
     necesarios. No olvides cargar el módulo de `samtools`.
@@ -248,7 +249,8 @@ el proceso, por eso trabajaremos con una región pequeña. Para este paso usa es
 archivo `fasta` de referencia:
 `/home/workshopX/shared/referencia_hmel2.5/Hmel2.5_with_mtDNA.fa`.
 
-**Sigue los pasos:**
+**Sigue los pasos:** :warning: Debes enviar el script que escribas para llamar
+genotipos.
 
 1.  Llamar genotipos con `bcftools` y otras herramientas es un proceso
     que da mejores resultados cuando se consideran los individuos <u>en
@@ -415,7 +417,8 @@ archivo sin necesidad de descomprimirlo (recuerda que es un vcf
 comprimido). Explora el archivo usando las herramientas que consideres
 necesarias y trata de **no** descomprimirlo usando `gunzip`.
 
-**Responde a las preguntas:**
+**Responde a las preguntas:** :warning: Debes enviar las respuestas a estas
+preguntas. El reto es opcional.
 
 1.  Cuántas líneas tiene mi archivo de genotipos en total?
 2.  Cuántas líneas tiene el encabezado?
@@ -471,21 +474,20 @@ trabajar.
 
 <span id="calcula_estadisticas"></span>
 
-1.  **Preparando el análisis por sitios:** Es necesario modificar
-    nuestro archivo de genotipos para poder aplicar filtros
-    correctamente y hacer análisis posteriores de forma correcta; la
-    mayoría de análisis y modelos en genética de poblaciones están
-    diseñados considerando individualmente sitios con dos alelos
-    (bialélicos). Debemos entonces quitar los indels y los sitios con
-    más de dos alelos de nuestro archivo `vcf`. Para quitar los indels
-    usamos la opción `--remove-indels`. Para quedarnos con sitios con
-    uno o dos alelos usamos la opción `--max-alleles`. La opción
-    `--recode` se usa para tener información de salida en formato `vcf`.
-    La opción `--recode-INFO-all` se usa para mantener el encabezado del
-    vcf original y la opción `--out` se usa para darle un pre-fijo al
-    nombre del archivo de salida. `vcftools` escribe un archivo sin
-    comprimir, cuando tengas el resultado en un vcf comprímelo con
-    `bgzip`. La sintaxis para usar `bgzip` es `bgzip archivo.vcf.gz`.
+1.  :warning: **Preparando el análisis por sitios:** Es necesario modificar
+    nuestro archivo de genotipos para poder aplicar filtros correctamente y
+    hacer análisis posteriores de forma correcta; la mayoría de análisis y
+    modelos en genética de poblaciones están diseñados considerando
+    individualmente sitios con dos alelos (bialélicos). Debemos entonces quitar
+    los indels y los sitios con más de dos alelos de nuestro archivo `vcf`. Para
+    quitar los indels usamos la opción `--remove-indels`. Para quedarnos con
+    sitios con uno o dos alelos usamos la opción `--max-alleles`. La opción
+    `--recode` se usa para tener información de salida en formato `vcf`. La
+    opción `--recode-INFO-all` se usa para mantener el encabezado del vcf
+    original y la opción `--out` se usa para darle un pre-fijo al nombre del
+    archivo de salida. `vcftools` escribe un archivo sin comprimir, cuando
+    tengas el resultado en un vcf comprímelo con `bgzip`. La sintaxis para usar
+    `bgzip` es `bgzip archivo.vcf.gz`.
 
     La forma general de usar `vcftools` es la siguiente:
 
@@ -592,7 +594,7 @@ trabajar.
 
     Podemos continuar con los siguientes pasos.
 
-2.  **Contando alelos:**
+2.  :warning: **Contando alelos:**
 
     El primer criterio que usaremos para filtrar algunos sitios es el
     número de alelos que observamos en ellos. Si el número de individuos
@@ -684,7 +686,7 @@ trabajar.
     Hmel218003o    135 1   2   2   0
     ```
 
-3.  **Calculando profundidad promedio de secuenciación por individuo:**
+3.  :warning: **Calculando profundidad promedio de secuenciación por individuo:**
 
     La profundidad de sencuenciación es importante pues ayuda a informar
     los soportes estadísticos para llamar determinados alelos. En
@@ -706,7 +708,7 @@ trabajar.
     `--gzvcf <archivo de
              genotipos>`.
 
-4.  **Calculando profundidad promedio de secuenciación por sitio:**
+4.  :warning: **Calculando profundidad promedio de secuenciación por sitio:**
 
     A nivel de sitio el efecto de la profundidad baja no es muy
     diferente: Si un sitio tiene baja profundidad de cobertura es más
@@ -717,7 +719,7 @@ trabajar.
     `--site-mean-depth`. El archivo de salida debe tener la extensión
     `.ldepth.mean`.
 
-5.  **Calculando calidad de alineamiento por sitio (`QUAL`):**
+5.  :warning: **Calculando calidad de alineamiento por sitio (`QUAL`):**
 
     La calidad de alineamiento por sitio nos dice qué tan bien alineadas
     están las lecturas que cubren una región determinada.
@@ -726,7 +728,7 @@ trabajar.
     `--site-quality`. El archivo de salida debe tener la extensión
     `.lqual`.
 
-6.  **Calculando la proporción de datos perdidos por individuo:**
+6.  :warning: **Calculando la proporción de datos perdidos por individuo:**
 
     Los sitios con datos perdidos son aquellos en donde no hubo
     evidencia suficiente para llamar un genotipo durante el paso de
@@ -748,7 +750,7 @@ trabajar.
     algún patrón? ¿Cuál puede ser la razón biológica para estas
     observaciones?
 
-7.  **Calculando la proporción de datos perdidos por sitio:**
+7.  :warning: **Calculando la proporción de datos perdidos por sitio:**
 
     La proporción de datos perdidos por sitio nos permite determinar
     regiones del genoma que fueron difíciles de alinear para la mayoría
@@ -763,7 +765,7 @@ trabajar.
     sección (contando alelos). En este punto el cálculo sería
     redundante.
 
-8.  **Transfiriendo los datos a nuestra máquina**
+8.  :warning: **Transfiriendo los datos a nuestra máquina**
 
     Finalmente copia a tu máquina los archivos creados usando `scp` o
     `mailx`.
@@ -797,7 +799,7 @@ trabajar.
     library(tidyverse)
     ```
 
-2.  **Estadísticas por sitio: Conteo de alelos**
+2.  :warning: **Estadísticas por sitio: Conteo de alelos**
 
     <span id="estadisticas_sitio_conteo"></span>
 
@@ -833,7 +835,7 @@ trabajar.
     que tengan 30 o más alelos. Vamos a conservar los sitios con 30 o
     más alelos.
 
-3.  **Estadísticas por sitio: Profundidad promedio**
+3.  :warning: **Estadísticas por sitio: Profundidad promedio**
 
     <span id="estadisticas_prof_promedio"></span> Normalmente en un
     experimento de secuenciación la profundidad es altamente variable;
@@ -868,7 +870,7 @@ trabajar.
     sitios cuyas profundidades promedio estén en el intervalo
     5 ≤ *p**r**o**f**u**n**d**i**d**a**d* ≤ 50.
 
-4.  **Estadísticas por individuo: Profundidad promedio**
+4.  :warning: **Estadísticas por individuo: Profundidad promedio**
 
     Los datos de estadísticas por individuo no son muy grandes entonces
     podemos verlos sin necesidad de una gráfica. Sin embargo, vamos a
@@ -892,7 +894,7 @@ trabajar.
     individuos cuyos promedios de profundidad están por debajo de 3
     podríamos considerar excluirlos del análisis.
 
-5.  **Estadísticas por individuo: Datos perdidos**
+5.  :warning: **Estadísticas por individuo: Datos perdidos**
 
     Exploremos el porcentaje de datos perdidos que cada individuo tiene
     en la region `Hmel218003o:1-1500000`.
@@ -915,7 +917,7 @@ trabajar.
 
 ### Aplicando los filtros al archivo VCF
 
-1.  **Criterio basado en conteos:**
+1.  **Criterio basado en conteos:** :warning: Envía solo la parte de `vcftools`
 
     Este es el filtro más complejo de los tres. Lo que debemos hacer en
     este caso es anlizar nuestros datos de conteo de alelos en `R`,
@@ -984,7 +986,7 @@ trabajar.
     bcftools index heliconius.optixscaf.SNPS.NV.FL1.vcf.gz
     ```
 
-2.  **Criterio basado en profundidad:**
+2.  :warning: **Criterio basado en profundidad:**
 
     Cuando calculamos la profundidad por sitio
     ([3](#estadisticas_prof_promedio)) decidimos retener sitios con
@@ -1004,7 +1006,7 @@ trabajar.
     bcftools index heliconius.optixscaf.SNPS.NV.FL2.vcf.gz
     ```
 
-3.  **Criterios basados en estadísitcas por individuo:**
+3.  :warning: **Criterios basados en estadísitcas por individuo:**
 
     En general nuestros individuos lucen bien en términos de profundidad
     promedio y datos perdidos como lo vimos en nuestras gráficas de
@@ -1013,7 +1015,7 @@ trabajar.
     junto a ellas la lista de nombres de individuos que queremos
     mantener o descartar.
 
-**Pregunta:** Después de filtrar ¿Cuántos sitios tenemos en nuestra
+:warning: **Pregunta:** Después de filtrar ¿Cuántos sitios tenemos en nuestra
 última versión del archivo de genotipos?
 
 -   [ ] Reto: ¿Puedes aplicar estos dos filtros en una sola línea? ¿Cómo
