@@ -42,7 +42,7 @@ muestras.
 
 Los datos de las lecturas de secuenciación de estas muestras que
 usaremos en los siguientes pasos están disponibles en Centauro, en la
-carpeta `/home/workshopX/shared_workshop/reads_heliconius/`, donde
+carpeta `/home/workshopX/shared/reads_heliconius/`, donde
 `workshopX` es el usuario que te corresponde para el curso. Verifica que
 puedes acceder a la carpeta y hacer una lista de los archivos.
 
@@ -568,17 +568,6 @@ resultante del paso anterior.
     argumentos posicionales que requiere el script. Muéstrale la línea
     de comando a un miembro del personal docente antes de enviar el
     trabajo a la cola.
-
-    <details>
-    <summary> Trata de escribir la línea de comando por tu cuenta. Si no puedes avanzar en tu solución puedes ver el código aquí. </summary>
-
-    Si tu script se llama `quita_duplicados.sh` puedes llamarlo usando
-    los tres argumentos posicionales de esta forma. Asegúrate de
+    
+    Puedes llamar tu script usando argumentos posicionales. Asegúrate de
     reemplazar los argumentos con las rutas correctas a tus archivos.
-
-    ``` shell
-    sbatch quita_duplicados.sh /ruta/alineamiento.ordenado.bam \
-           /ruta/alineamiento.salida /ruta/alineamiento.metricas
-    ```
-
-    </details>

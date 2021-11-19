@@ -25,7 +25,7 @@
 Para este paso vamos a utilizar los alineamientos de las 18 muestras de
 *Heliconius* cuyos duplicados de PCR ya fueron removidos. Los
 alineamientos y sus archivos de índice se encuentran en Centauro, en la
-ruta `/home/workshopX/shared_workshop/alineamientos_heliconius/`, donde
+ruta `/home/workshopX/shared/alineamientos_heliconius/`, donde
 `workshopX` es el usuario asignado para el curso, y tienen la extensión
 `smallr.rmd.sort.bam`. Copia los alineamientos y sus índicies a un
 directorio llamado `llamada_genotipos` en tu directorio de trabajo.
@@ -150,7 +150,7 @@ heterocigoto para ese sitio (ver imagen abajo).
 
 | ![](../Imagenes/soporte_genotipo.png)                                                            |
 |-------------------------------------------------------------------------------------------------|
-| Representación de una llamada de genotipo usando umbrales Q  ≥ 20 y proporción de conteos 80:20 |
+| Representación de una llamada de genotipo usando umbrales Q ≥ 20 y proporción de conteos 80:20  |
 
 Las aproximaciones más comunes hacen los procesos que acabamos de
 describir pero existen métodos alternos que incorporan la incertidumbre
@@ -278,7 +278,7 @@ pequeña.
 
 6.  Finalmente en <u>el tercer paso</u> generamos un índice del archivo
     `vcf.gz` para hacer operaciones de forma más rápida con él. Utiliza
-    [`bcftools         index`](https://samtools.github.io/bcftools/bcftools.html#index)
+    [`bcftools index`](https://samtools.github.io/bcftools/bcftools.html#index)
     con dos procesadores para construir este índice. Si se ejecuta
     correctamente debería crearse un archivo con un nombre idéntico al
     creado en el paso anterior pero con la extensión `.csi` añadida al
@@ -296,6 +296,37 @@ pequeña.
     script a un monitor/instructor para verificar que no haya errores de
     sintáxis. Muéstrale también la línea que usarás para enviar el
     trabajo a la cola.
+    
+    <details>
+    <summary> Este script puede ser difícil de escribir bien. Si no puedes avanzar mira el código aquí </summary>
+    
+    ```shell
+    #!/bin/bash
+    #SBATCH -p normal
+    #SBATCH -n 2
+    #SBATCH --mem=8000
+    #SBATCH --time=0-1:00
+
+    module load samtools
+
+    bamlist=$1
+    refpath=$2
+    outdir=$3
+    outfile=$4
+
+    bcftools mpileup -Ou --threads 2 \
+             --max-depth 10000 \
+             -q 20 -Q 20 -P Illumina \
+             -a FORMAT/DP,FORMAT/AD \
+             -f $refpath -b $bamlist | \
+        bcftools call -m --threads 2 \
+                 -f GQ \
+                 -O z \
+                 -o $outdir/$outfile
+
+    bcftools index $outdir/$outfile
+    ```
+    </details>
 
 8.  Envía el trabajo a la cola. Asegúrate de enviar el trabajo desde el
     directorio donde están tus archivos de entrada.
