@@ -317,7 +317,7 @@ texto.
 
 3.  Cree un archivo llamado `lista_carpetas.txt` que contenga la lista
     de carpetas dentro de `linea_comando` ¿Cómo ignorar los archivos y
-    te quedarse solo con las carpetas? Consulte la ayuda de `ls` usando
+    quedarse solo con las carpetas? Consulte la ayuda de `ls` usando
     `man`.
 
 4.  Mueva `archivo2.1.2.2.txt` y `Archivo2.1.2.3.txt` a `subcarpeta3.1`
@@ -361,30 +361,30 @@ la solución.
 1.  ¿Cuántas líneas tiene el archivo `gen_ch1_mus_musculus.txt`?
     ¿Cuántas palabras tiene este archivo? ¿Cuántos caracteres tiene este
     archivo?
-2.  Use `head` y `tail` para responder: ¿Cuáles son los primeros 5 genes
+2.  :warning: Use `head` y `tail` para responder: ¿Cuáles son los primeros 5 genes
     que aparecen en el archivo (segunda columna)? ¿Cuáles son los
     últimos 3 genes?
-3.  Use el comando `cut` para cortar y acceder a columnas individuales
+3.  :warning: Use el comando `cut` para cortar y acceder a columnas individuales
     del archivo de genes del ratón. La opción `-f<n>` le permite escoger
     columnas individuales o grupos de columnas que quiera cortar. Debe
     reemplazar `<n>` por el número de columna que quiera seleccionar.
-4.  Use `head` y `tail` para imprimir las líneas de la 925 a la 938 del
+4.  :warning: Use `head` y `tail` para imprimir las líneas de la 925 a la 938 del
     archivo `gen_ch1_mus_musculus.txt`, re-dirija la salida a `cut`
     usando el operador `|` y corte solamente los identificadores de los
     genes. ¿Qué identificadores se encontraron en esta selección?
     ¿Cuántos identificadores hay allí?
-5.  Use los comandos `uniq`, `sort` y `grep` para contar la aparición de
+5.  :warning: Use los comandos `uniq`, `sort` y `grep` para contar la aparición de
     cada nombre en la segunda columna. ¿Qué opción de `uniq` debes usar
     para contar repeticiones?
-6.  Genere una lista con los nombres de los genes repetidos y guárdala
+6.  :warning: Genere una lista con los nombres de los genes repetidos y guárdala
     en un archivo llamado `repetidos_ch1_mmus.txt`
-7.  Genere una lista con los nombres de los genes no repetidos y
-    guárdala en un archivo llamado `no_repetidos_ch1_mmus.txt`
+7.  :warning: Genere una lista con los nombres de los genes no repetidos y
+    guárdela en un archivo llamado `no_repetidos_ch1_mmus.txt`
 8.  Responda: ¿Cuántas líneas tiene originalmente el archivo
     `genes_ch1_mus_musculus.txt`?
-9.  Responde: Ignorando las repeticiones, ¿cuántos genes únicos hay
+9.  Responda: Ignorando las repeticiones, ¿cuántos genes únicos hay
     realmente en estos datos?
-10. Responde: Reporta el número más alto de repeticiones que tiene un
+10. Responda: Reporte el número más alto de repeticiones que tiene un
     gen en este archivo.
 
 
@@ -404,7 +404,7 @@ trabajar este punto</u>.
 1.  Utilice la herramienta `zless` para verificar la estructura del
     archivo.
 
-2.  Utilice la versión apropiada de `cat` junto con `cut` y `grep` para
+2.  :warning: Utilice la versión apropiada de `cat` junto con `cut` y `grep` para
     establecer qué individuos tienen asociadas las siguientes marcas en
     `secuencia2`.
 
@@ -418,26 +418,24 @@ trabajar este punto</u>.
     operador apropiado. Al usar cut puede especificar el delimitador
     usando la opción `-d` seguida del caracter delimitador entre
     comillas sencillas. Por ejemplo, si el delimitador es un caracter de
-    tabulación (`\t`) usarías `-d'\t'`.
+    tabulación (`\t`) usaríamos `-d'\t'`.
 
     Responda: ¿En total cuántos individuos tienen alguna de estas tres
-    secuencias en la segunfa parte de la columna izquierda?
+    secuencias en la segunda parte de la columna izquierda?
 
-3.  Asigne la ruta absoluta del archivo `tags_seqs.txt.gz` a una
-    variable de `bash`. Utilice el operador `$` para expandir el
-    contenido de la variable y use esta expansión en una llamada a la
-    versión adecuada de `grep` y las opciones adecuadas de este programa
-    para contar el número de identificadores moleculares que empiezan
-    con la base `T`. ¿Cuántos encontró?
+3.  :warning: Asigne la ruta absoluta del archivo `tags_seqs.txt.gz` a una
+    variable de `bash`. Utilice el operador `$` para expandir el contenido de la
+    variable y use esta expansión en una llamada a la versión adecuada de `grep`
+    y las opciones adecuadas de este programa para contar el número de
+    identificadores moleculares que empiezan con la base `T`. ¿Cuántos encontró?
 
-4.  Use las versión apropiada las versiones apropiadas de `cat`, `grep`
-    y `cut` para mostrar únicamente los individuos que pertenecen al
-    outgroup. Los individuos del outgroup son aquellos cuyo nombre
-    (segunda columna). Empieza con `out`.
+4.  :warning: Use la versión apropiada de `cat`, `grep` y `cut` para mostrar
+    únicamente los individuos que pertenecen al outgroup. Los individuos del
+    outgroup son aquellos cuyo nombre (segunda columna). Empieza con `out`.
 
-5.  Use `cut` con las opciones apropiadas para quedarse solo con la
-    información correspondiente a `secuencia2` y la segunda columna,
-    excluyendo la parte de `secuencia1-` en cada fila.
+5.  :warning: Use `cut` con las opciones apropiadas para quedarse solo con la
+    información correspondiente a `secuencia2` y la segunda columna, excluyendo
+    la parte de `secuencia1-` en cada fila.
 
 ---
 
@@ -492,15 +490,14 @@ nombre que estamos buscando. La segunda es utilizar el sub-comando
 `avail` de `module` y re-dirigir el resultado a `grep` para buscar el
 patrón que queremos encontrar.
 
-1.  Utilice `moldule avail` en conjunto `grep` para buscar algún módulo
-    en particular. Pruebe buscando los módulos `java`, `stacks` y
+1.  :warning: Utilice `moldule avail` en conjunto `grep` para buscar algún
+    módulo en particular. Pruebe buscando los módulos `java`, `stacks` y
     `OrthoMCL`. Describa qué observa en las tres búsquedas.
-2.  Utilice el sub-comando `keyword` de `module` para buscar los tres
-    módulos del numeral anterior. Describa qué observa en las tres
-    búsquedas.
-3.  Utilice el sub-comando `spider` de `module` para buscar los tres
+2.  :warning: Utilice el sub-comando `keyword` de `module` para buscar los tres
+    módulos del numeral anterior. Describa qué observa en las tres búsquedas.
+3.  :warning: Utilice el sub-comando `spider` de `module` para buscar los tres
     módulos del numeral 1. Describa qué observa en las tres búsquedas
-4.  ¿Cómo describiría las diferencias entre `keyword` y `spider`?
+4.  :warning: ¿Cómo describiría las diferencias entre `keyword` y `spider`?
 5.  Consulte la ayuda de `module` usando la opción `-h` y responda:
     ¿Existe alguna forma de consultar los módulos que ya están cargados
     en su sesión? ¿Cómo lo hace?
@@ -512,24 +509,24 @@ patrón que queremos encontrar.
 
 ## La cola de trabajo
 
-El archivo [`bash_loops1.tar.gz`](./material/bash_loops1.tar.gz) fue
-creado con la herramienta `tar` y contiene varias carpetas, cada una de
-ellas contiene un archivo de texto con un mensaje. Descomprima el
-archivo usando `tar` con las opciones `-z`, `-x` y `-f` para poder
-explorar la estructura de directorios contenida en el archivo. Explore
-el contenido de uno de los archivos de texto para saber cuál es el
-mensaje y luego genere una estructura idéntica a la de la carpeta
-`bash_loops1`. Utilice un solo ciclo `for` para generar las carpetas y
+El archivo [`bash_loops1.tar.gz`](./material/bash_loops1.tar.gz) fue creado con
+la herramienta `tar` y contiene varias carpetas, cada una de ellas contiene un
+archivo de texto con un mensaje. Descomprima el archivo usando `tar` con las
+opciones `-z`, `-x` y `-f` para poder explorar la estructura de directorios
+contenida en el archivo. Explore el contenido de uno de los archivos de texto
+para saber cuál es el mensaje y luego genere una estructura idéntica a la de la
+carpeta `bash_loops1`. Utilice un solo ciclo `for` para generar las carpetas y
 crear los archivos con el mensaje. Agregue una pausa de un segundo a cada
 iteración del `for` usando la herramienta `sleep`. Ponga las instrucciones
-correspondientes a los primeros 3 pasos en un script de `bash` con el
-código apropiado para poderlo enviar a la cola de trabajos del cluster
-usando `sbatch`. A partir del paso 4 trabaje en una sesión interactiva.
+correspondientes a los primeros 3 pasos en un script de `bash` con el código
+apropiado para poderlo enviar a la cola de trabajos del cluster usando `sbatch`.
+A partir del paso 4 trabaje en una sesión interactiva. :warning: Debe enviarnos
+el script que escriba en `nano`.
 
 1.  Solicite recursos para ejecutar el trabajo. Use las directivas
     `#SBATCH` en el inicio de su script para enviar a la cola `normal`,
     solicita un solo procesador, 50MB de memoria RAM y 1h de tiempo de
-    ejecución. No olvides incluir el `shebang`!.
+    ejecución. No olvide incluir el `shebang`!.
 
 2.  Adicionalmente, envíe notificaciones a su correo cuando la tarea
     empiece, termine, o encuentre errores. Use directivas `#SBATCH` o
@@ -555,9 +552,9 @@ usando `sbatch`. A partir del paso 4 trabaje en una sesión interactiva.
     tar [OPCIONES] archivo.tar.gz directorio
     ```
 
-6.  Copie el archivo resultante (`bash_loops1.tar.gz`) a su máquina
-    personal usando `scp` (haz esto desde su máquina). La sintáxis para
-    copiar archivos usando `scp` desde/hacia CENTAURO es:
+6.  :warning: Copie el archivo resultante (`bash_loops1.tar.gz`) a su máquina
+    personal usando `scp` (haz esto desde su máquina). La sintáxis para copiar
+    archivos usando `scp` desde/hacia CENTAURO es:
 
     ``` shell
     # transfiriendo desde CENTAURO
@@ -569,7 +566,7 @@ usando `sbatch`. A partir del paso 4 trabaje en una sesión interactiva.
         usuario@loginpub-hpc.urosario.edu.co:/ruta/para/copiar/
     ```
 
-7.  Envía el archivo resultante (`bash_loops1.tar.gz`) a su correo
+7.  :warning: Envíe el archivo resultante (`bash_loops1.tar.gz`) a su correo
     electrónico usando la herramienta `mailx`. La sintáxis para adjuntar
     archivos y enviarlos a una dirección de correo es la siguiente.
 
@@ -658,21 +655,20 @@ Identificador de secuencia. **En su máquina local haga lo siguiente**.
     enlaces, cópielos (copiar enlace) y péguelos en su archivo de
     comandos.
 
-6.  **Vaya ahora al cluster, a su carpeta de trabajo.** Cree un directorio
-    llamado `descarga_muestras` y entre a él.
+6.  :warning: **Vaya ahora al cluster, a su carpeta de trabajo.** Cree un
+    directorio llamado `descarga_muestras` y entre a él.
 
-7.  Para esta tarea no enviaremos los trabajos a la cola porque <u>los
-    nodos de trabajo no están conectados a internet</u> y no pueden
-    realizar descargas. Usaremos un programa llamado `screen` en el nodo
-    maestro. `screen` nos permite dejar una tarea ejecutándose y nos da
-    la posibilidad de desacoplar nuestra sesión para que el trabajo se
-    siga ejecutando aún cuando nos desconectemos del cluster. Escriba
-    `screen -S <sesion>` en donde `<sesion>` debe ser reemplazado por el
-    nombre que quiera darle a la sesión de descarga. Por ejemplo,
-    puede llamarla `descarga_NGS`. Verá que se abre una nueva sesión
-    de trabajo.
+7.  :warning: Para esta tarea no enviaremos los trabajos a la cola porque <u>los
+    nodos de trabajo no están conectados a internet</u> y no pueden realizar
+    descargas. Usaremos un programa llamado `screen` en el nodo maestro.
+    `screen` nos permite dejar una tarea ejecutándose y nos da la posibilidad de
+    desacoplar nuestra sesión para que el trabajo se siga ejecutando aún cuando
+    nos desconectemos del cluster. Escriba `screen -S <sesion>` en donde
+    `<sesion>` debe ser reemplazado por el nombre que quiera darle a la sesión
+    de descarga. Por ejemplo, puede llamarla `descarga_NGS`. Verá que se abre
+    una nueva sesión de trabajo.
 
-8.  En esta sesión nueva usará `wget` para descargar uno de los dos
+8.  :warning: En esta sesión nueva usará `wget` para descargar uno de los dos
     archivos de secuencias de NGS que encontramos en ENA. La sintáxis
     recomendada para descargar este archivo con `wget` es la siguiente:
 
@@ -689,10 +685,9 @@ Identificador de secuencia. **En su máquina local haga lo siguiente**.
     `especie.subespecie.R2.fastq.gz` dependiendo de si baja el primer
     (<sub>1</sub>) o el segundo (<sub>2</sub>) conjunto de secuencias.
 
-9.  Ejecute la línea que acaba de escribir. Asegúrese de que está
-    haciendo la descarga, puede verificar que la descarga se está
-    haciendo si no observa errores y `wget` imprime en pantalla algo
-    como esto:
+9.  :warning: Ejecute la línea que acaba de escribir. Asegúrese de que está
+    haciendo la descarga, puede verificar que la descarga se está haciendo si no
+    observa errores y `wget` imprime en pantalla algo como esto:
 
     ![](../Imagenes/busca_EBI_4.png)
 
@@ -704,14 +699,13 @@ Identificador de secuencia. **En su máquina local haga lo siguiente**.
     que su procedimiento de descarga funciona y que puede desacoplar su
     sesión de `screen`.
 
-11. **Re-acoplando la sesión desacoplada**. `screen` le permite
-    conectarse nuevamente a la sesión en la que estaba trabajando antes
-    mediante la opción `-r`. Si solo tiene una sesión de `screen`
-    desacoplada puede ejecutar solamente `screen -r. Si tiene más de
-    una sesión desacoplada, debe ejecutar `screen -r <sesion>` donde
-    `<sesion>` es el nombre que le dio a su sesión de `screen` en el
-    paso 7. Verifique que puede conectarse nuevamente a la sesión de
-    descarga y desacople la sesión nuevamente con `Ctrl + a` y `d`.
+11. :warning: **Re-acoplando la sesión desacoplada**. `screen` le permite
+    conectarse nuevamente a la sesión en la que estaba trabajando antes mediante
+    la opción `-r`. Si solo tiene una sesión de `screen` desacoplada puede
+    ejecutar solamente `screen -r. Si tiene más de una sesión desacoplada, debe
+    ejecutar `screen -r <sesion>` donde `<sesion>` es el nombre que le dio a su
+    sesión de `screen` en el paso 7. Verifique que puede conectarse nuevamente a
+    la sesión de descarga y desacople la sesión nuevamente con `Ctrl + a` y `d`.
 
 ---
 
