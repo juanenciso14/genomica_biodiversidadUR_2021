@@ -13,7 +13,7 @@
     - [Preparación](#preparación)
     - [Navegación del sistema de archivos](#navegación-del-sistema-de-archivos)
     - [Creación de directorios y archivos](#creación-de-directorios-y-archivos)
-    - [Programas disponibles en tu máquina](#programas-disponibles-en-tu-máquina)
+    - [Programas disponibles en su máquina](#programas-disponibles-en-tu-máquina)
     - [Copia, movimiento y deleción de directorios y archivos](#copia-movimiento-y-deleción-de-directorios-y-archivos)
 - [Unix no tan básico](#unix-no-tan-básico)
     - [Genes con nombres duplicados](#genes-con-nombres-duplicados)
@@ -297,7 +297,7 @@ texto.
 
     ![](../Imagenes/tree_linea_comando.png)
 
-## Programas disponibles en tu máquina
+## Programas disponibles en su máquina
 
 1.  Comente qué diferencias observa con las herramientas disponibles en
     los sistemas de sus compañeros de grupo. ¿Todos tienen las mismas
@@ -311,7 +311,7 @@ texto.
 
 ## Copia, movimiento y deleción de directorios y archivos
 
-1.  Vaya a tu carpeta :house:
+1.  Vaya a su carpeta :house:
 
 2.  Vaya a `linea_comando` usando una ruta relativa.
 
@@ -470,7 +470,7 @@ es la misma.
 3.  Utilice secure shell (`ssh`) para abrir una conexión remota a
     Centauro. Utilice la opción `-i` para especificar la ruta a la llave
     `.pem` y la opción `-p` para especificar el puerto de acceso
-    (53841). A continuación especifique tu nombre de usuario asignado
+    (53841). A continuación especifique su nombre de usuario asignado
     seguido de un `@` y finalice con la dirección pública del cluster
     (`loginpub-hpc.urosario.edu.co`). Observe el ejemplo en la imagen,
     en este caso me estoy conectando desde mi carpeta `home` (`~`).
@@ -508,7 +508,7 @@ patrón que queremos encontrar.
     alguna forma de cargar versiones diferentes de un mismo módulo sin
     realizar dos cargas independientes? ¿Cómo lo hace?
 
-¿Qué diferencias notas?
+¿Qué diferencias nota?
 
 ## La cola de trabajo
 
@@ -524,14 +524,14 @@ crear los archivos con el mensaje. Agregue una pausa de un segundo a cada
 iteración del `for` usando la herramienta `sleep`. Ponga las instrucciones
 correspondientes a los primeros 3 pasos en un script de `bash` con el
 código apropiado para poderlo enviar a la cola de trabajos del cluster
-usando `sbatch`. A partir del paso 4 trabaja en una sesión interactiva.
+usando `sbatch`. A partir del paso 4 trabaje en una sesión interactiva.
 
 1.  Solicite recursos para ejecutar el trabajo. Use las directivas
-    `#SBATCH` en el inicio de tu script para enviar a la cola `normal`,
+    `#SBATCH` en el inicio de su script para enviar a la cola `normal`,
     solicita un solo procesador, 50MB de memoria RAM y 1h de tiempo de
     ejecución. No olvides incluir el `shebang`!.
 
-2.  Adicionalmente, envíe notificaciones a tu correo cuando la tarea
+2.  Adicionalmente, envíe notificaciones a su correo cuando la tarea
     empiece, termine, o encuentre errores. Use directivas `#SBATCH` o
     incluya la solicitud de envío de notificaciones al correo y su
     dirección de correo electrónico como opciones en `sbatch`. Para esto
@@ -543,8 +543,8 @@ usando `sbatch`. A partir del paso 4 trabaja en una sesión interactiva.
     tarea?
 
 4.  Al finalizar la ejecución: Verifique la información de corrido que el
-    sistema envió a tu correo electrónico, si no puede encontrar los
-    mensajes revise tu carpeta **Spam**.
+    sistema envió a su correo electrónico, si no puede encontrar los
+    mensajes revise su carpeta **Spam**.
 
 5.  Archive y comprima la estructura resultante usando `tar` y las
     opciones `c`, `z` y `f`. Consulta el manual de `tar` para saber qué
@@ -556,7 +556,7 @@ usando `sbatch`. A partir del paso 4 trabaja en una sesión interactiva.
     ```
 
 6.  Copie el archivo resultante (`bash_loops1.tar.gz`) a su máquina
-    personal usando `scp` (haz esto desde tu máquina). La sintáxis para
+    personal usando `scp` (haz esto desde su máquina). La sintáxis para
     copiar archivos usando `scp` desde/hacia CENTAURO es:
 
     ``` shell
@@ -581,7 +581,7 @@ usando `sbatch`. A partir del paso 4 trabaja en una sesión interactiva.
     ```
 
     <details>
-    <summary> Si no logras avanzar escribiendo el script de bash puedes encontrar la respuesta aquí. Asegúrate de hacerlo por tu cuenta primero! </summary>
+    <summary> Si no logra avanzar escribiendo el script de bash puede encontrar la respuesta aquí. Asegúrese de hacerlo por su cuenta primero! </summary>
 
     ``` shell
     #!/bin/bash

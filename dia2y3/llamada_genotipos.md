@@ -66,7 +66,7 @@ este [paper publicado en PNAS
 2.  Dentro del script crea un ciclo `for` que itere sobre los
     alineamientos `.bam` que ya están ordenados y sin duplicados de PCR.
     Si no recuerdas cómo escribir un ciclo `for` en `bash` puedes
-    consultarlo [aquí](./for_loops_bash.md).
+    consultarlo [aquí](../dia1/for_loops_bash.md).
 
 3.  En cada iteración del ciclo debes llamar a `samtools view` con dos
     procesadores usando la opción `-@`. Debes usar la opción `-b` para
