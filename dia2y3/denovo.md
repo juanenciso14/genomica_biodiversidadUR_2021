@@ -18,7 +18,7 @@
 
 *De novo* es una forma de ensamblaje del genoma sin la ayuda de datos genómicos de referencia, así és, un ensamblaje inicial de un genoma. Esto asume que no se conoce detalles del genoma, como el tamaño y la composición de las secuencias del ADN. Por esto, son bastante utilizados en organismos no-modelos donde no hay disponible genomas para muchas espécies. En la ausencia de un genoma referencia, los loci no se pueden visualizar posicionalmente; en su lugar, cada locus se examina de forma independiente para comprobar si es un valor atípico para detectar falsos positivos. En la figura abajo (Fig. 1) una comparación de (a) *de novo* y (b) genoma referencia.
 
-![Comparación de (a) *de novo* y (b) genoma referencia ([Fuente](https://www.cambridge.org/core/journals/journal-of-laryngology-and-otology/article/bioinformatics-in-otolaryngology-research-part-one-concepts-in-dna-sequencing-and-gene-expression-analysis/689CA09EF58BE1613946DB156867A07F)).](./Imagenes/denovo_vs_mapping.jpg)
+![Comparación de (a) *de novo* y (b) genoma referencia ([Fuente](https://www.cambridge.org/core/journals/journal-of-laryngology-and-otology/article/bioinformatics-in-otolaryngology-research-part-one-concepts-in-dna-sequencing-and-gene-expression-analysis/689CA09EF58BE1613946DB156867A07F)).](../Imagenes/denovo_vs_mapping.jpg)
 
 Además, *de novo* puede ser utilizado si hay un genoma referencia pero no es de alta calidad. Un análisis *de novo* complementario es bueno para comparar cuántos loci pueden faltar en el genoma de referencia o para identificar loci atípicos que no están en la referencia ensamblada. Cuando el genoma de referencia está distante, o si su calidad es cuestionable, tiene sentido adoptar un enfoque híbrido: ensamblar loci *de novo* y luego alinear sus secuencias de consenso y respaldar la información posicional en el conjunto de datos *de novo*. Esto permite aprovechar el genoma de referencia sin comprometer la consistencia de las llamadas de genotipo. Este enfoque híbrido permite una comparación directa de los análisis *de novo* y basados en referencias. Cuando el genoma es de buena calidad y las propiedades genómicas (por ejemplo, contenido repetido) del sistema son tales que el ensamblaje *de novo* de los loci RAD funciona bien, los dos enfoques deberían producir resultados muy similares.
 
@@ -30,11 +30,11 @@ En este curso vamos a utilizar STACKS para hacer la ensemblaje *de novo*. Pero e
 ## *Lupinus* (Contreras-Ortiz, et al., 2018)
 *Lupinus* es un género de planta con una diversificación muy grande en los Andes, con 85 especies. Algunas especies cambian su historia de vida anual a perenne, esto ha sido sugerido como una adaptación clave que facilita la colonización de hábitats montanos (3500-4900m). Aquí vamos a utilizar muestras de dos especies estrechamente relacionadas de *Lupinus* (A: *L. triananus* y B: *L. alopecuroides* en la Fig. 2 abajo).
 
-![Las dos especies de *Lupinus* que vamos trabajar: (A) *L. triananus* y (B) *L. alopecuroides* (foto de [Contreras-Ortiz, et al., 2018](https://academic.oup.com/botlinnean/article-abstract/187/1/118/4907975)).](./Imagenes/Lupinus_foto.png)
+![Las dos especies de *Lupinus* que vamos trabajar: (A) *L. triananus* y (B) *L. alopecuroides* (foto de [Contreras-Ortiz, et al., 2018](https://academic.oup.com/botlinnean/article-abstract/187/1/118/4907975)).](../Imagenes/Lupinus_foto.png)
 
 *L. alopecuroides* se distribuye en la cordillera Central y Oriental al sur y *L. triananus* en la cordillera Oriental (ver mapa abajo - Fig. 3). Vamos a utilizar cinco individuos de cada especie que fueron secuenciados a través de la técnica nextRAD en el trabajo de [Contreras-Ortiz, et al., 2018](https://academic.oup.com/botlinnean/article-abstract/187/1/118/4907975) y que están disponibles públicamente. El secuenciamiento fue realizado en Illumina NextSeq500 con lecturas de 150bp y *single-end*.
 
-![Mapa con la distribución de las dos espécies de *Lupinus* que vamos a utilizar en nuestro dataset - en amarillo (foto modificada de [Contreras-Ortiz, et al., 2018](https://academic.oup.com/botlinnean/article-abstract/187/1/118/4907975)).](./Imagenes/Lupinus_distr.png)
+![Mapa con la distribución de las dos espécies de *Lupinus* que vamos a utilizar en nuestro dataset - en amarillo (foto modificada de [Contreras-Ortiz, et al., 2018](https://academic.oup.com/botlinnean/article-abstract/187/1/118/4907975)).](../Imagenes/Lupinus_distr.png)
 
 Artículos con más información sobre el conjunto de datos:  
 - [Contreras-Ortiz, et al., 2018](https://academic.oup.com/botlinnean/article-abstract/187/1/118/4907975);  
@@ -44,7 +44,7 @@ Artículos con más información sobre el conjunto de datos:
 
 # Software STACKS <a name = "stacks"></a>
 
-![](./Imagenes/stacks_logo.png)
+![](../Imagenes/stacks_logo.png)
 
 [**Website**](https://catchenlab.life.illinois.edu/stacks/) | [**Manual**](https://catchenlab.life.illinois.edu/stacks/manual/)
 
@@ -53,7 +53,7 @@ Stacks es un "*pipeline*" para construir loci a partir de secuencias cortas, com
 
 Stacks identifica los loci en un conjunto de individuos, usando *de novo* o alineados con un genoma de referencia, y luego genotipa cada locus. Un análisis *de novo* en Stacks se desarrolla en seis etapas principales (Fig. 4 abajo). Primero, las lecturas son demultiplexadas y limpiadas por el programa **process_radtags**. Las siguientes tres etapas comprenden la canalización principal de Stacks: construcción de loci (**ustacks**), creación del catálogo de loci (**cstacks**) y comparación con el catálogo (**sstacks**). En la quinta etapa, se ejecuta el programa **gstacks** para ensamblar y fusionar contigs de extremos emparejados, llamar a sitios variantes en la población y genotipos en cada muestra. En la etapa final, se ejecuta el programa **populations**, que puede filtrar datos, calcular estadísticas de genética de poblaciones y exportar una variedad de formatos de datos.
 
-![Pasos realizados en Stacks (Foto de [Stacks](https://catchenlab.life.illinois.edu/stacks/)).](./Imagenes/stacks_full_pipeline.png)
+![Pasos realizados en Stacks (Foto de [Stacks](https://catchenlab.life.illinois.edu/stacks/)).](../Imagenes/stacks_full_pipeline.png)
 
 ### Antes de empezar:
 Vamos a copiar los datos brutos que analizaremos a su usuario. Los datos **all.fastq.gz** se encuentran en la carpeta compartida `~/shared/denovo`. Ejecute el comando `scp -r` para copiar la carpeta con los datos a tu usuario.  
@@ -69,7 +69,7 @@ En un análisis típico, los datos estarán en formato FASTQ, que es el formato 
 
 *Process_radtags* examina las lecturas crudas de Illumina y, en primer lugar, comprueba que los barcodes y el sitio de corte RAD (Fig. 5 abajo) estén intactos y demultiplexa los datos. Si hay errores en el barcode o en el sitio RAD dentro de un cierto margen, *process_radtags* puede corregirlos. En segundo lugar, desliza una ventana a lo largo de la lectura y verifica el puntaje de calidad promedio dentro de la ventana. Si la puntuación cae por debajo del 90% de probabilidad de ser correcta (una puntuación *phred* bruta de 10), la lectura se descarta. Estos procedimientos eliminan las lecturas en que la secuencia se degrada a medida que se secuencia, pero aún admite algunos errores de secuenciación que se puede corregir.
 
-![Diagrama con un ejemplo de los elementos (barcode, sitio de corte de enzima, ...) de cada fragmento de ADN secuenciado](./Imagenes/fastq_denovo.png)
+![Diagrama con un ejemplo de los elementos (barcode, sitio de corte de enzima, ...) de cada fragmento de ADN secuenciado](../Imagenes/fastq_denovo.png)
 
 **Archivos necesarios:**  
 - archivo *fastq.gz* con todas las muestras crudas (no procesado)  
