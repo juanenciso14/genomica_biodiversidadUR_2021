@@ -91,7 +91,7 @@ Descárguelo `RAxML_bipartitions.RAXML_100boot.out` en su computadora y abra el 
 
 Los árboles de especies muestran el patrón de ramificación de linajes de especies a través del proceso de especiación. Cuando las comunidades reproductivas se dividen por especiación, las copias de genes dentro de estas comunidades también se dividen según la descendencia. Las árboles de genes continúan ramificándose y descendiendo a través del tiempo. Por lo tanto, los árboles genéticos (de genes) están contenidos dentro de las ramas de la filogenia de las especies ([Maddison, 1997](https://academic.oup.com/sysbio/article/46/3/523/1651369)).
 
-![Conflicto entre árboles de genes y de especie - figura de [Marin et al., 2020](https://onlinelibrary.wiley.com/doi/epdf/10.1111/jeb.13677)](./Imagenes/speciesTree.jpg)
+![Conflicto entre árboles de genes y de especie - figura de [Marin et al., 2020](https://onlinelibrary.wiley.com/doi/epdf/10.1111/jeb.13677)](../Imagenes/speciesTree.jpg)
 
 Para inferir los árboles de especies entre las especies de *Heliconius*, vamos usar la metodología de [SVDquartets](https://academic.oup.com/bioinformatics/article/30/23/3317/206559?login=true) implementado en [PAUP](https://paup.phylosolutions.com/) que infiere relaciones entre cuartetos de taxones bajo el modelo coalescente para estimar los árboles de especies. Otro software ampliamente utilizado para esto es [ASTRAL](https://github.com/smirarab/ASTRAL).
 
