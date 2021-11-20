@@ -108,12 +108,12 @@ diferencias entre este análisis y el que hiciste anteriormente.
 
 Vamos a construir nuestro PCA por pasos.
 
-1.  **Sitios independientes:** En este caso necesitamos tener
+1.  :warning: **Sitios independientes:** En este caso necesitamos tener
     independencia entre los sitios que usamos para hacer el análisis. La
     solución a esto es eliminar una fracción de sitios que estén en
-    desequilibrio de ligamiento, es decir, sitios cuyos alelos muestren
-    una frecuencia muy alta de asociación estadística. Usamos las
-    siguientes opciones en `plink` para ejecutar este paso.
+    desequilibrio de ligamiento, es decir, sitios cuyos alelos muestren una
+    frecuencia muy alta de asociación estadística. Usamos las siguientes
+    opciones en `plink` para ejecutar este paso.
 
     -   `--vcf <archivo.vcf.gz>` aquí especificamos el archivo de
         genotipos que usaremos.
@@ -164,7 +164,7 @@ Vamos a construir nuestro PCA por pasos.
     observas en ellos? ¿Cuántos sitios están registrados en cada uno de
     los archivos?
 
-2.  **Análisis de componentes principales:** Ahora ejecutamos el
+2.  :warning: **Análisis de componentes principales:** Ahora ejecutamos el
     análisis de componentes principales usando solo los sitios
     independientes resultantes del paso anterior.
 
@@ -202,7 +202,7 @@ Vamos a construir nuestro PCA por pasos.
     principales. Transfiere estos dos archivos de resultados a tu
     máquina usando `scp` ó `mailx`.
 
-3.  **Visualización de los resultados en R:**
+3.  :warning: **Visualización de los resultados en R:**
 
     Vamos a graficar los resultados del análisis de componentes
     principales. Es típico de estos análisis graficar las relaciones
@@ -286,7 +286,7 @@ Vamos a construir nuestro PCA por pasos.
     -   [ ] ¿Qué modificaciones tendríamos que hacer en el código de R
         para pintar la relación entre PC2 y PC3?
 
-## ¿Podemos observar diferentes patrones usando las mismas muestras?
+## ¿Podemos observar diferentes patrones usando las mismas muestras? :warning:
 
 Ciertas regiones del genoma pueden mostrar procesos evolutivos
 interesantes. Vamos a comparar la región del gen *optix* con una
@@ -371,17 +371,17 @@ aún con pocas muestras.
 Esta medida normalmente se estima promediando varios sitios en regiones
 del genoma en lugar de estimarse para un solo sitio.
 
-\[ \] Pregunta: ¿Qué procesos pueden causar que algunas partes del
+- [ ] Pregunta: ¿Qué procesos pueden causar que algunas partes del
 genoma tengan más diversidad nucleotídica que otras en una población?
 
-1.  **Estimando diversidad nucleotídica a lo largo de `Hmel218003o`**
+1.  :warning: **Estimando diversidad nucleotídica a lo largo de `Hmel218003o`**
 
     Para este análisis ya tenemos todo preparado; nuestro archivo de
     genotipos ya fue filtrado en un paso anterior. Podemos estimar la
     diversidad nucleotídica en nuestros datos usando `vcftools`.
     Empezaremos haciendo estimados de π en ventanas de 2kb (2000 bases)
     a lo largo del scaffold `Hmel218003o`. Para esto usamos la opción
-    `--window-pi <tam. ventana>` de `vcftools`, donde `<tamn. ventana>`
+    `--window-pi <tam. ventana>` de `vcftools`, donde `<tam. ventana>`
     es un número entero que define el número de posiciones que debe
     contener una ventana.
 
@@ -411,13 +411,8 @@ genoma tengan más diversidad nucleotídica que otras en una población?
     -   [ ] ¿Qué efectos puede tener el número de variantes en el
         estimado?
 
-    -   [ ] ¿Según tus observaciones, los estimados de todas las
-        ventanas son confiables o piensas que hay algunos que no lo son?
 
-    -   [ ] ¿Para interpretar los datos te quedarías con todos los
-        resultados o excluirías algunas ventanas? ¿Por qué?
-
-3.  **Visualizando los resultados**
+3.  :warning: **Visualizando los resultados**
 
     Transfiere los resultados de los análisis de diversidad nucleotídica
     a tu máquina local usando `scp` o `mailx`.
@@ -435,10 +430,9 @@ genoma tengan más diversidad nucleotídica que otras en una población?
     ```
 
     Observando nuestros datos en texto plano notamos que existen algunas
-    ventanas que tienen muy pocos sitios segregantes. Usando un
-    histograma, visualicemos la distribución de sitios segregantes a lo
-    largo de las ventanas del scaffold para evaluar qué tan informativas
-    son las ventanas con menos sitios invariantes.
+    ventanas que tienen muy pocos sitios segregantes. Usando un histograma,
+    visualicemos la distribución de sitios segregantes a lo largo de las
+    ventanas del scaffold.
 
     <details>
     <summary> Trata de hacer el histograma por tu cuenta. Si no puedes avanzar mira el código aquí </summary>
@@ -453,8 +447,9 @@ genoma tengan más diversidad nucleotídica que otras en una población?
 
     ![](../Imagenes/histog_nsites_pi2k.png)
 
-    Grafica los de posición a lo largo de `Hmel218003o` vs. diversidad
-    nucleotídica usando `ggplot` y una gráfica de línea.
+    Ahora haz una gráfica de línea que muestre la relación entre la posición a
+    lo largo de `Hmel218003o` y la diversidad nucleotídica estimada usando
+    `ggplot`.
 
     <details>
     <summary> Trata de graficar los resultados por tu cuenta. Si no puedes avanzar mira el código aquí </summary>
@@ -474,13 +469,12 @@ genoma tengan más diversidad nucleotídica que otras en una población?
 
     -   [ ] ¿Puedes observar algún patrón?
 
-    -   [ ] Calcula versiones del estimado usando ventanas más grandes y
-        más pequeñas a lo largo de `Hmel218003o`, usa por lo menos otros
-        dos tamaños de ventana. ¿Qué observas cuando cambias el tamaño
-        de ventana?
+    -   [ ] :warning: Calcula versiones del estimado usando ventanas más grandes
+        y más pequeñas a lo largo de `Hmel218003o`, usa por lo menos otros dos
+        tamaños de ventana. ¿Qué observas cuando cambias el tamaño de ventana?
 
-    -   [ ] En tu opinión ¿Qué tamaño de ventana permite observar mejor
-        la variación de diversidad nucleotídica a lo largo de
+    -   [ ] :warning: En tu opinión ¿Qué tamaño de ventana permite observar
+        mejor la variación de diversidad nucleotídica a lo largo de
         `Hmel218003o`?
 
 En los pasos anteriores usamos todos los individuos en nuestro conjunto
@@ -534,23 +528,22 @@ minutos de tiempo de ejecución.
 
 1.  **Preparando los datos**
 
-    Para este análisis ya tenemos una gran parte preparada; nuestro
-    archivo de genotipos ya fue filtrado en un paso anterior. Vamos a
-    usar `vcftools` para analizar la estructura por ventana usando este
-    archivo y otras piezas de información.
+    Para este análisis ya tenemos una gran parte preparada; nuestro archivo de
+    genotipos ya fue filtrado en un paso anterior. Vamos a usar `vcftools` para
+    analizar la estructura por ventana usando este archivo y otras piezas de
+    información.
 
-    Necesitamos preparar archivos de texto en los que especificamos la
-    población a la que pertenece cada muestra. Usando `nano` crea un
-    archivo por población. Cada archivo debe tener una columna con los
-    identificadores de las muestras que pertenecen a determinada
-    población tal y como aparecen en la línea `#CHROM` del archivo
-    `vcf`. Para este análisis ignora a las muestras de especies
-    'silvaniformes', utiliza solo las dos poblaciones de *H. timareta* y
-    la población de *H. melpomene* (3 poblaciones en total). Estas
-    poblaciones son más cercanas genéticamente entre sí que cualquiera
-    de ellas con las silvaniformes.
+    Necesitamos preparar archivos de texto en los que especificamos la población
+    a la que pertenece cada muestra. Usando `nano` crea un archivo por
+    población. Cada archivo debe tener una columna con los identificadores de
+    las muestras que pertenecen a determinada población tal y como aparecen en
+    la línea `#CHROM` del archivo `vcf`. Para este análisis ignora a las
+    muestras de especies 'silvaniformes', utiliza solo las dos poblaciones de
+    *H. timareta* y la población de *H. melpomene* (3 poblaciones en total).
+    Estas poblaciones son más cercanas genéticamente entre sí que cualquiera de
+    ellas con las silvaniformes.
 
-2.  **Estimando la estructura a lo largo de Hmel218003o**
+2.  :warning: **Estimando la estructura a lo largo de Hmel218003o**
 
     Utiliza `vcftools` con las opciones `--weir-fst-pop <archivo
             identidades>`. Revisa [la documentación de
@@ -598,10 +591,7 @@ minutos de tiempo de ejecución.
 
     -   [ ] ¿Cuántos estimados de estructura aparecen?
 
-    -   [ ] ¿Qué valores aparecen más frecuentemente? ¿Cuál piensas que
-        es la razón por la que observamos estos valores?
-
-4.  **Visualizando F<sub>ST</sub> por sitio a lo largo de Hmel218003o**
+4.  :warning: **Visualizando F<sub>ST</sub> por sitio a lo largo de Hmel218003o**
 
     Transfiere los resultados de los análisis de índice de fijación
     F<sub>ST</sub> a tu máquina local usando `scp` o `mailx`.
@@ -711,7 +701,7 @@ minutos de tiempo de ejecución.
     En este caso los archivos de entrada son los mismos que cuando
     calculamos F<sub>ST</sub> por sitio.
 
-2.  **Estimando la estructura a lo largo de Hmel218003o**
+2.  :warning: **Estimando la estructura a lo largo de Hmel218003o**
 
     Utiliza `vcftools` con las opciones
     `--weir-fst-pop <archivo identidades>`
@@ -746,7 +736,7 @@ minutos de tiempo de ejecución.
 
     </details>
 
-3.  **Examinando los resultados: Ventanas a lo largo de Hmel218003o**
+3.  :warning: **Examinando los resultados: Ventanas a lo largo de Hmel218003o**
 
     Examina los archivos de texto que resultaron de estimar
     F<sub>ST</sub> por ventanas con `vcftools`.
@@ -776,10 +766,10 @@ minutos de tiempo de ejecución.
 
     ![](../Imagenes/ensembl_search.png)
 
-    -   [ ] Cuáles son las coordenadas del gen *optix* en el scaffold
+    -   [ ] :warning: Cuáles son las coordenadas del gen *optix* en el scaffold
         `Hmel218003o`?
 
-4.  **Visualizando F<sub>ST</sub> a lo largo de Hmel218003o**
+4.  :warning: **Visualizando F<sub>ST</sub> a lo largo de Hmel218003o**
 
     Graficar los resultados por ventana es muy similar a como lo hicimos
     por sitio. Carga la librería `tidyverse` y los datos en `R`.
@@ -858,20 +848,21 @@ minutos de tiempo de ejecución.
 
     Responde a las preguntas:
 
-    -   [ ] ¿Qué poblaciones tienen un menor nivel de estructuración
+    -   [ ] :warning: ¿Qué poblaciones tienen un menor nivel de estructuración
         entre sí?
 
-    -   [ ] ¿Qué poblaciones tienen un mayor nivel de estructuración
+    -   [ ] :warning: ¿Qué poblaciones tienen un mayor nivel de estructuración
         entre sí?
 
     -   [ ] ¿Qué explicación puede tener esta diferencia entre
         comparaciones?
 
-    -   [ ] ¿Hay alguna región de `Hmel218003o` en donde observes
-        patrones interesantes?
+    -   [ ] :warning: ¿Hay alguna región de `Hmel218003o` en donde observes
+        patrones interesantes? Descríbela en términos de posición a lo largo de
+        `Hmel218003o`.
 
-    -   [ ] ¿Puedes pintar la posición de *optix* en tu gráfica? Pista:
-        Usa la función `geom_rect` de `ggplot`.
+    -   [ ] :warning: Pintar la posición de *optix* en tu gráfica. Pista: Usa la
+        función `geom_rect` de `ggplot`.
 
     <details>
     <summary> Mira una versión mejorada aquí ¿Qué cambios harías en el análisis para lograr una versión así? </summary>
@@ -1025,11 +1016,10 @@ de corrido (`Dsuite`).
     errores de ejecución si las poblaciones en este archivo no están
     separadas por un caracter de tabulación.
 
-2.  **Estimando las estadísticas D:**
+2.  :warning: **Estimando las estadísticas D:**
 
-    Dsuite está disponible en para los usuarios de `biologia.evolutiva`
-    en `/shared/Dsuite/Build/Dsuite`. **TODO Cambiar ruta cuando se cree
-    la particion en centauro**.
+    El ejecutable de `Dsuite` está disponible en para los usuarios del curso en
+    la ruta `/home/workshopX/shared/Dsuite/Build/`.
 
     Esta es la sintaxis que usamos para correr `Dsuite`.
 
@@ -1104,7 +1094,7 @@ de corrido (`Dsuite`).
     -   [ ] ¿Cuáles son las coordenadas del gen *optix* en el scaffold
         `Hmel218003o`?
 
-4.  **Visualizando los resultados:**
+4.  :warning: **Visualizando los resultados:**
 
     Crea una gráfica del estadístico D a lo largo del scaffold
     `Hmel218003o`. Puedes usar un gráfico de línea o punto. Tu resultado
@@ -1130,21 +1120,21 @@ de corrido (`Dsuite`).
     -   [ ] ¿Hay alguna región de `Hmel218003o` en donde observes
         patrones interesantes?
 
-    -   [ ] ¿Puedes pintar la posición del gen *optix* en tu gráfica?
-        Pista: Usa la función `geom_rect` de `ggplot`.
+    -   [ ] :warning: Pintar la posición del gen *optix* en tu gráfica. Pista:
+        Usa la función `geom_rect` de `ggplot`.
 
-5.  **Otras hipótesis de introgresión**
+5.  :warning: **Otras hipótesis de introgresión**
 
     Usando `Dsuite` construye otras hipótesis de introgresión cambiando
     el orden de P1, P2 y P3 en el archivo. Incluye por lo menos una
     diferente a la que probamos en el punto anterior.
 
-    -   [ ] ¿Qué hipótesis de introgresión nuevas incluiste?
+    -   [ ] :warning: ¿Qué hipótesis de introgresión nuevas incluiste?
 
-    -   [ ] ¿Qué diferencias observas respecto a los resultados
+    -   [ ] :warning: ¿Qué diferencias observas respecto a los resultados
         anteriores?
 
-    -   [ ] ¿Cómo explicas las diferencias observadas?
+    -   [ ] :warning: ¿Cómo explicas las diferencias observadas?
 
 6.  **Si tienes tiempo...**
 
