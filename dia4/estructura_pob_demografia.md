@@ -177,7 +177,7 @@ En esta parte estimaremos algunos parámetros demográficos (tamanho poblacional
 
 Antes de empezar las estimaciones demográficas, necesitamos transformar nuestros datos al [*Site Frequency Spectrum* (SFS)](https://en.wikipedia.org/wiki/Allele_frequency_spectrum). Cada entrada en el SFS indica el número total de loci con la correspondiente frecuencia de alelos derivados.
 
-![SFS y folded SFS ([imagen de acá](https://www.mun.ca/biology/scarr/SFS_&_FSFS.html))](./Imagenes/SFS_FSFS.jpg)
+![SFS y folded SFS ([imagen de acá](https://www.mun.ca/biology/scarr/SFS_&_FSFS.html))](../Imagenes/SFS_FSFS.jpg)
 
 La figura arriba muestra cómo el cálculo de **SFS** para 10 bp y n = 6 individuos haploides. El SFS va a tener n-1 = 5 clases, porque cualquier variante de SNP podría ocurrir en 1/6, 2/6, ..., o 5/6 individuos: si ocurre en 6/6  signfica que los individuos son invariantes. El SFS se obtiene contando el número de SNP derivados con respecto a los "1"s (en recuadros grises) individuales. Cuando no está claro si el estado del carácter en el individuo #1 es ancestral o derivado, el SFS se "dobla" (**folded SFS**) combinando las clases "1" y "5" (ambas clases tienen un carácter de una manera y cinco de otra), y el clases "2" y "4" (ambas tienen dos en un sentido y tres en el otro). La clase '3' permanece sin cambios (combina los tipos equilibrados 000111 y 111000).
 
