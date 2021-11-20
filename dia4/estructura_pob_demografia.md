@@ -86,7 +86,7 @@ b <- ggplot(pca, aes(PC1, PC2, col = Species)) +
 
 El software [*Admixture*](https://dalexander.github.io/admixture/) | [Manual](https://dalexander.github.io/admixture/admixture-manual.pdf) es una herramienta de estimación de máxima verosimilitud de ancestralidad (#K) para los individuos estudiados a partir de conjuntos de datos de genotipos (SNP) multilocus - ver fig. abajo.
 
-![Un gráfico de *admixture* (imagen de: [Lawson et al., 2018](https://www.nature.com/articles/s41467-018-05257-7))](./Imagenes/admixture.png)
+![Un gráfico de *admixture* (imagen de: [Lawson et al., 2018](https://www.nature.com/articles/s41467-018-05257-7))](../Imagenes/admixture.png)
 
 **Suposiciones del modelo:**
 - Los SNP no están vinculados.
@@ -170,7 +170,7 @@ barplot(t(as.matrix(q)), col = c("#ef8a62", "#91bfdb"), xlab = "Individual #", y
 
 En esta parte estimaremos algunos parámetros demográficos (tamanho poblacional, tiempo de divergencia, ...) basados en nuestro conjunto de datos y compararemos dos modelos demográficos de divergencia, aislamiento sin migración (A) y con migración (B - fig. abajo), para verificar cuál de estos modelos es el más probable.
 
-![Los dos modelos de aislamiento sin migración (A) y con migración (B) que vamos comparar ([imagen modificada del manual de Fastsimcoal](http://cmpg.unibe.ch/software/fastsimcoal2511/man/fastsimcoal25.pdf))](./Imagenes/fastsimcoal_models.png)
+![Los dos modelos de aislamiento sin migración (A) y con migración (B) que vamos comparar ([imagen modificada del manual de Fastsimcoal](http://cmpg.unibe.ch/software/fastsimcoal2511/man/fastsimcoal25.pdf))](../Imagenes/fastsimcoal_models.png)
 
 
 ## Infiriendo el SFS <a name = "SFS"></a>
