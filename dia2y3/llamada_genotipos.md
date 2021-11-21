@@ -1036,7 +1036,7 @@ trabajar.
     bcftools index heliconius.optixscaf.SNPS.NV.FL2.vcf.gz
     ```
     
-2.  :warning: **Criterio basado en calidad:**
+3.  :warning: **Criterio basado en calidad:**
 
     Cuando calculamos la calidad por sitio ([Calidad de la
     inferencia](#estadisticas_calidad_inferencia)) mencionamos que se considera
@@ -1054,7 +1054,7 @@ trabajar.
     bcftools index heliconius.optixscaf.SNPS.NV.FL3.vcf.gz
     ```
 
-3.  :warning: **Criterios basados en estadísitcas por individuo:**
+4.  :warning: **Criterios basados en estadísitcas por individuo:**
 
     En general nuestros individuos lucen bien en términos de profundidad
     promedio y datos perdidos como lo vimos en nuestras gráficas de
@@ -1066,5 +1066,5 @@ trabajar.
 :warning: **Pregunta:** Después de filtrar ¿Cuántos sitios tenemos en nuestra
 última versión del archivo de genotipos?
 
--   [ ] Reto: ¿Puedes aplicar estos tres filtros en una sola línea? ¿Cómo lo
+-   [ ] Reto: ¿Puedes aplicar todos estos filtros en una sola línea? ¿Cómo lo
     harías?
