@@ -853,10 +853,22 @@ trabajar.
     ggplot(data=prof_avg_sitio, aes(x=MEAN_DEPTH)) + geom_histogram() +
       labs(x="Prof. prom. x sitio", y="Conteo")
     ```
-
+    
     El resultado debe verse así:
 
     ![](../Imagenes/prof_promedio_sitio.png)
+    
+    Preguntas: ¿Cuál es el rango principal de distribución de los datos
+    de profundidad? ¿Por qué el eje x tiene su límite derecho tan lejos?
+
+    Normalmente se considera que en un experimento de secuenciación la
+    profundidad debe ser mayor a 5 (5 lecturas soportando los alelos observados
+    en una posición, a menos que el experimento haya sido diseñado desde el
+    principio con baja profundidad). Según nuestra gráfica es raro observar
+    sitios con profundidad de secuenciación de 50 o más; las profundidades muy
+    altas pueden ser resultado de artefactos y es razonable excluirlas. Por lo
+    tanto, vamos a incluir sitios cuyas profundidades promedio estén en el
+    intervalo 5 ≤ profundidad ≤ 50.
     
 4.  :warning: **Estadísticas por sitio: Calidad de la inferencia**
 
@@ -866,7 +878,7 @@ trabajar.
     calidad de la inferencia de los alelos durante la llamada de genotipos será
     más alta y habrá más confianza en los datos. Si todas las bases en un sitio
     tienen buenas calidades podemos observar puntajes muy altos (~1000). Los
-    sitios con calidades de inferencia $\geq$ 30 se consideran de buena calidad.
+    sitios con calidades de inferencia ≥ 30 se consideran de buena calidad.
     Cargamos y pintamos los datos de calidad de inferencia de la siguiente forma:
 
     ``` r
@@ -877,24 +889,10 @@ trabajar.
     ggplot(datos_calidad_sitio, aes(x=QUAL)) + geom_histogram() +
       labs(x="Calidad. x sitio", y="Conteo")
     ```
-
     El resultado debe verse así:
 
     ![](../Imagenes/calidades_sitio.png)
-
-
-Preguntas: ¿Cuál es el rango principal de distribución de los datos
-    de profundidad? ¿Por qué el eje x tiene su límite derecho tan lejos?
-
-    Normalmente se considera que en un experimento de secuenciación la
-    profundidad debe ser mayor a 5 (5 lecturas soportando los alelos
-    observados en una posición, a menos que el experimento haya sido
-    diseñado desde el principio con baja profundidad). Según nuestra
-    gráfica es raro observar sitios con profundidad de secuenciación de
-    50 o más; las profundidades muy altas pueden ser resultado de
-    artefactos y es razonable excluirlas. Por lo tanto, vamos a incluir
-    sitios cuyas profundidades promedio estén en el intervalo
-    5 ≤ *p**r**o**f**u**n**d**i**d**a**d* ≤ 50.
+    
 
 5.  :warning: **Estadísticas por individuo: Profundidad promedio**
 
@@ -912,6 +910,8 @@ Preguntas: ¿Cuál es el rango principal de distribución de los datos
       labs(x="Individuo", y="Prof. promedio") + 
       theme(axis.text.x = element_text(angle = 45, hjust=1))
     ```
+    
+    El resultado debe verse así:
 
     ![](../Imagenes/prof_prom_indv.png)
 
