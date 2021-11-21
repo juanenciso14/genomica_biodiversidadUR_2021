@@ -38,7 +38,7 @@
 
 Hay dos formas posibles de descargar los tutoriales de nuestro curso:  
 1. Acceda al repositorio en [GitHub con el
-   material](https://github.com/juanenciso14/genomica_biodiversidad), haga clic
+   material](https://github.com/juanenciso14/genomica_biodiversidadUR_2021), haga clic
    en el botón verde "Code" y luego "Download Zip".Esto guardará un archivo zip
    en su computadora. Encuéntrelo y descomprímalo - se convertirá en una carpeta
    llamada "genomica_biodiversidad" con todos los tutoriales que necesitaremos
@@ -46,7 +46,7 @@ Hay dos formas posibles de descargar los tutoriales de nuestro curso:
 
 2. Si tiene git en su computadora, usando la terminal puede navegar a la carpeta en la que desea tener los tutoriales y hacer:  
 
-`git clone https://github.com/juanenciso14/genomica_biodiversidad.git`  
+`git clone https://github.com/juanenciso14/genomica_biodiversidadUR_2021.git`  
 El comando `git clone` lo usaremos en el clúster otras veces, por lo que tendrá
 la oportunidad de practicarlo sin tener que instalarlo en su máquina. No veremos
 otras funcionalidades de `git` durante el curso. Pero si está interesado en
@@ -257,7 +257,7 @@ texto.
 
 2.  Navegue hacia su directorio de trabajo usando la línea de comandos y
     descargue allí el archivo
-    [`linea_comando.zip`](https://github.com/juanenciso14/genomica_biodiversidad/blob/master/material/linea_comando.zip?raw=true)
+    [`linea_comando.zip`](https://github.com/juanenciso14/genomica_biodiversidadUR_2021/blob/main/material/linea_comando.zip?raw=true)
     usando `wget`.
 
     Renombre el archivo usando la opción `-O` de `wget` seguida del
