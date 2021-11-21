@@ -55,7 +55,12 @@ horas del curso, no podrás obntener un certificado de participación.
 A lo largo de los tutoriales encontrarás un aviso como este: :warning:.
 Esto quiere decir que debes entregar el trabajo correspondiente al ítem
 marcado con el aviso. Si tienes dudas sobre lo que debes entregar en un
-ítem particular, por favor consulta al personal docente.
+ítem particular, por favor consulta al personal docente. Debes enviar tu
+trabajo en formato Markdown (código) tus gráficas. Para hacer el envío
+haz un archivo `.zip` que incluya el código y las gráficas. Haz tu envío
+antes del 2 de diciembre de 2021 a las 8:00pm (GMT -5) al item de
+entrega disponible en e-aulas. Es indispensable enviar el trabajo
+requerido para recibir el certificado y la insignia.
 
 ## Queremos conocer tu opinión
 
