@@ -951,27 +951,25 @@ trabajar.
     y exportar estos datos en el formato requerido.
 
     Recuerda que en la sección donde preparábamos el análisis por sitios
-    ([3.4.1](#calcula_estadisticas)) hicimos una operación en la que le
-    dábamos a cada sitio un identificador único. Usaremos esos
-    identificadores únicos aquí para filtrar nuestro archivo usando la
+    ([Preparando análisis por sitios](#calcula_estadisticas)) hicimos una
+    operación en la que le dábamos a cada sitio un identificador único. Usaremos
+    esos identificadores únicos aquí para filtrar nuestro archivo usando la
     opción `--snps` de `vcftools`.
 
-    Cargamos nuestro archivo de conteos en `R`. Fíjate que conectamos
-    varias operaciones entre sí con el operador `%>%`, que funciona como
-    `|`, pero en `R`. Dijimos anteriormente
-    ([2](#estadisticas_sitio_conteo)) que queríamos retener sitios con
-    30 o más alelos, luego debemos aplicar un filtro para retener los
-    sitios que cumplen con esta condición (primer `filter`). Con estos
-    sitios calculamos la frecuencia del alelo menos frecuente (`AF`,
-    parte de `mutate`, `ifelse`, etc.). Luego, queremos retener los
-    sitios que tienen más de tres alelos menores, es decir, una valor de
-    `AF > 3/30` (0.1). También queremos retener sitios invariantes
-    (`AF == 0`). Luego, creamos una nueva columna llamada `SNP_ID`, que
-    es el resultado de unir las columnas `CHROM` y `POS` usando `:` como
-    separador (parte de `mutate` y `paste`). Seleccionamos solo esa
-    columna (`select`) y la asignamos a la variable `sitios_cont`.
-    Finalmente escribimos estos datos en el disco usando la función
-    `write_tsv`, ignorando el nombre de la columna.
+    Cargamos nuestro archivo de conteos en `R`. Fíjate que conectamos varias
+    operaciones entre sí con el operador `%>%`, que funciona como `|`, pero en
+    `R`. Dijimos anteriormente ([Conteo de alelos](#estadisticas_sitio_conteo))
+    que queríamos retener sitios con 30 o más alelos, luego debemos aplicar un
+    filtro para retener los sitios que cumplen con esta condición (primer
+    `filter`). Con estos sitios calculamos la frecuencia del alelo menos
+    frecuente (`AF`, parte de `mutate`, `ifelse`, etc.). Luego, queremos retener
+    los sitios que tienen más de tres alelos menores, es decir, una valor de `AF
+    > 3/30` (0.1). También queremos retener sitios invariantes (`AF == 0`).
+    Luego, creamos una nueva columna llamada `SNP_ID`, que es el resultado de
+    unir las columnas `CHROM` y `POS` usando `:` como separador (parte de
+    `mutate` y `paste`). Seleccionamos solo esa columna (`select`) y la
+    asignamos a la variable `sitios_cont`. Finalmente escribimos estos datos en
+    el disco usando la función `write_tsv`, ignorando el nombre de la columna.
 
     ``` r
     ### Conteo alelos x sitio, cargamos los datos
@@ -1022,15 +1020,13 @@ trabajar.
 
 2.  :warning: **Criterio basado en profundidad:**
 
-    Cuando calculamos la profundidad por sitio
-    ([3](#estadisticas_prof_promedio)) decidimos retener sitios con
-    profundidades entre 5 y 50. Podemos establecer estos límites en
-    `vcftools` usando las opciones `--min-meanDP
-             <float>` y `--max-meanDP <float>`. Como en el caso del
-    filtro anterior, usa las opciones de `vcftools` para producir datos
-    en formato `vcf` y envíalos a la salida estándar. Utiliza `bgzip -c`
-    para comprimir, re-dirige a un archivo nuevo e indéxalo con
-    `bcftools`.
+    Cuando calculamos la profundidad por sitio ([Profundidad promedio por
+    sitio](#estadisticas_prof_promedio)) decidimos retener sitios con
+    profundidades entre 5 y 50. Podemos establecer estos límites en `vcftools`
+    usando las opciones `--min-meanDP <float>` y `--max-meanDP <float>`. Como en
+    el caso del filtro anterior, usa las opciones de `vcftools` para producir
+    datos en formato `vcf` y envíalos a la salida estándar. Utiliza `bgzip -c`
+    para comprimir, re-dirige a un archivo nuevo e indéxalo con `bcftools`.
 
     ``` shell
     vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL1.vcf.gz \
@@ -1038,6 +1034,24 @@ trabajar.
              --stdout | bgzip -c > heliconius.optixscaf.SNPS.NV.FL2.vcf.gz
 
     bcftools index heliconius.optixscaf.SNPS.NV.FL2.vcf.gz
+    ```
+    
+2.  :warning: **Criterio basado en calidad:**
+
+    Cuando calculamos la calidad por sitio ([Calidad de la
+    inferencia](#estadisticas_calidad_inferencia)) mencionamos que se considera
+    bueno retener solo los sitios con calidades ≥ 30. Establecemos la calidad
+    mínima en `vcftools` usando la opción `--minQ <float>` . Como en los filtros
+    anteriores, usa las opciones de `vcftools` para producir datos en formato
+    `vcf` y envíalos a la salida estándar. Utiliza `bgzip -c` para comprimir,
+    re-dirige a un archivo nuevo e indéxalo con `bcftools`.
+
+    ``` shell
+    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL2.vcf.gz \
+             --minQ 30 --recode --recode-INFO-all \
+             --stdout | bgzip -c > heliconius.optixscaf.SNPS.NV.FL3.vcf.gz
+
+    bcftools index heliconius.optixscaf.SNPS.NV.FL3.vcf.gz
     ```
 
 3.  :warning: **Criterios basados en estadísitcas por individuo:**
@@ -1052,5 +1066,5 @@ trabajar.
 :warning: **Pregunta:** Después de filtrar ¿Cuántos sitios tenemos en nuestra
 última versión del archivo de genotipos?
 
--   [ ] Reto: ¿Puedes aplicar estos dos filtros en una sola línea? ¿Cómo
-    lo harías?
+-   [ ] Reto: ¿Puedes aplicar estos tres filtros en una sola línea? ¿Cómo lo
+    harías?

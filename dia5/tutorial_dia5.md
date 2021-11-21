@@ -305,7 +305,7 @@ esta extracción. No olvides incluir las opciones `--recode` y
 <summary> Trata de construir la línea de comando por tu cuenta. Si no puedes avanzar mira el código aquí </summary>
 
 ``` shell
-vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL2.vcf.gz \
+vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL3.vcf.gz \
          --chr Hmel218003o --from-bp 720000 --to-bp 800000 \
          --recode --recode-INFO-all --stdout \
     | bgzip -c > region.optix.vcf.gz
@@ -559,17 +559,17 @@ minutos de tiempo de ejecución.
 
     ``` shell
     # comparacion timaretas: florencia thelxinoe
-    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL2.vcf.gz \
+    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL3.vcf.gz \
              --weir-fst-pop tim_fln_ids.txt --weir-fst-pop tim_thx_ids.txt \
              --out fln_thx_fst.SITIO
 
     # comparacion malleti florencia
-    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL2.vcf.gz \
+    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL3.vcf.gz \
              --weir-fst-pop tim_fln_ids.txt --weir-fst-pop melp_mallet_ids.txt \
              --out mallet_fln_fst.SITIO
 
     # comparacion malleti thelxinoe
-    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL2.vcf.gz \
+    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL3.vcf.gz \
              --weir-fst-pop tim_thx_ids.txt --weir-fst-pop melp_mallet_ids.txt \
              --out mallet_thx_fst.SITIO
     ```
@@ -719,17 +719,17 @@ minutos de tiempo de ejecución.
 
     ``` shell
     # comparacion timaretas
-    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL2.vcf.gz \
+    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL3.vcf.gz \
              --weir-fst-pop tim_fln_ids.txt --weir-fst-pop tim_thx_ids.txt \
              --fst-window-size 10000 --fst-window-step 5000 --out fln_thx_fst
 
     # comparacion malleti florencia
-    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL2.vcf.gz \
+    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL3.vcf.gz \
              --weir-fst-pop tim_fln_ids.txt --weir-fst-pop melp_mallet_ids.txt \
              --fst-window-size 10000 --fst-window-step 5000 --out mallet_fln_fst
 
     # comparacion malleti thelxinoe
-    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL2.vcf.gz \
+    vcftools --gzvcf heliconius.optixscaf.SNPS.NV.FL3.vcf.gz \
              --weir-fst-pop tim_thx_ids.txt --weir-fst-pop melp_mallet_ids.txt \
              --fst-window-size 10000 --fst-window-step 5000 --out mallet_thx_fst
     ```
