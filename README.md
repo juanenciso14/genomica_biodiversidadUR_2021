@@ -43,8 +43,8 @@ esperada.
 
 La asistencia será verificada por la monitora administrativa para
 asegurar que los estudiantes cumplen con el requerimiento de estar
-presentes en las sesiones. Recuerda que si no asistes a un porcentaje
-mínimo de XXX, no podrás obntener un certificado del curso.
+presentes en las sesiones. Recuerda que si no asistes al 85% de las
+horas del curso, no podrás obntener un certificado de participación.
 
 ## Trabajo de clase
 
