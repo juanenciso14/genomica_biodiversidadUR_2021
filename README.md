@@ -1,6 +1,4 @@
 ---
-author: Juan Enciso
-title: Genómica de la biodiversidad UR 2021
 ---
 
 # Estructura del curso
