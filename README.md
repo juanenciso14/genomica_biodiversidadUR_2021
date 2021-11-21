@@ -3,6 +3,10 @@
 
 # Estructura del curso
 
+Esta es la estructura que hemos planeado para el curso, discriminada por
+días. Dependiendo del progreso del curso podemos flexibilizarla y
+haremos los anuncios pertinentes de forma oportuna.
+
 ## Día 1
 
 En este día vamos a empezar con los fundamentos del uso de la línea de
