@@ -5,19 +5,28 @@
 
 ## Día 1
 
-[file:./dia1/](./dia1/)
+En este día vamos a empezar con los fundamentos del uso de la línea de
+comando en UNIX y el trabajo en clusters de cómputo. Puedes encontrar
+los tutoriales correspondientes en el directorio del [día 1](./dia1/).
 
 ## Días 2 y 3
 
-[file:./dia2y3](./dia2y3)
+Los días 2 y 3 empezaremos a trabajar nuestros datos de secuenciación de
+nueva generación y los procesaremos para hacer distintos análisis. Los
+tutoriales de ambos días están en el directorio de los [días 2 y
+3](./dia2y3/).
 
 ## Día 4
 
-[file:./dia4/](./dia4/)
+En el cuarto día haremos análisis de demografía y filogenómica con
+nuestros datos procesados. Este tutorial está disponible en el
+directorio del [día 4](./dia4/).
 
 ## Día 5
 
-[file:./dia5/](./dia5/)
+En el último día del curso haremos análisis de genómica poblacional en
+un subconjunto del genoma de *Heliconius*. Encontrarás este tutorial en
+el directorio del [día 5](./dia5/).
 
 # Recomendaciones
 
