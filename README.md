@@ -23,7 +23,7 @@ tutoriales de ambos días están en el directorio de los [días 2 y
 ## Día 4
 
 En el cuarto día haremos análisis de demografía y filogenómica con
-nuestros datos procesados. Este tutorial está disponible en el
+nuestros datos procesados. Los dos tutoriales están disponibles en el
 directorio del [día 4](./dia4/).
 
 ## Día 5
@@ -66,12 +66,24 @@ saber cómo podemos mejorar la experiencia para los participantes.
 
 ### Encuesta día 1
 
+[Link de la encuesta](https://forms.gle/Kz1i7e5WGrtyaCf57)
+
 ### Encuesta día 2
+
+[Link de la encuesta](https://forms.gle/zZJbTi2ZiZrHdTgc8)
 
 ### Encuesta día 3
 
+[Link de la encuesta](https://forms.gle/FuRpzi3nMHPa6CkB8)
+
 ### Encuesta día 4
+
+[Link de la encuesta](https://forms.gle/4ZunCvaUthuxGjnJ9)
 
 ### Encuesta día 5
 
+[Link de la encuesta](https://forms.gle/bQNhW37vpqASaCtZ9)
+
 ### Encuesta final
+
+[Link de la encuesta](https://forms.gle/5wkfQQftTR6TY5DC8)
