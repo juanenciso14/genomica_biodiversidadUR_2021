@@ -865,7 +865,9 @@ trabajar.
     Si en general los individuos tienen bases de alta calidad en un sitio, la
     calidad de la inferencia de los alelos durante la llamada de genotipos será
     más alta y habrá más confianza en los datos. Si todas las bases en un sitio
-    tienen buenas calidades podemos observar puntajes muy altos (~1000).
+    tienen buenas calidades podemos observar puntajes muy altos (~1000). Los
+    sitios con calidades de inferencia \geq 30 se consideran de buena calidad.
+    Cargamos y pintamos los datos de calidad de inferencia de la siguiente forma:
 
     ``` r
     ### Cargamos los datos de calidad de inferencia de la información en un sitio
