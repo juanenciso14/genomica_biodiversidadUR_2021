@@ -721,8 +721,9 @@ trabajar.
 
 5.  :warning: **Calculando calidad de alineamiento por sitio (`QUAL`):**
 
-    La calidad de alineamiento por sitio nos dice qué tan bien alineadas
-    están las lecturas que cubren una región determinada.
+    La calidad de alineamiento por sitio nos dice qué tan bien alineadas están
+    las lecturas que cubren una región determinada. Este estimado es
+    especialmente importante cuando hay inferencia de alelos alternativos `ALT`.
 
     Calculamos la calidad de alineamiento por sitio usando la opción
     `--site-quality`. El archivo de salida debe tener la extensión
@@ -856,8 +857,31 @@ trabajar.
     El resultado debe verse así:
 
     ![](../Imagenes/prof_promedio_sitio.png)
+    
+4.  :warning: **Estadísticas por sitio: Calidad de la inferencia**
 
-    Preguntas: ¿Cuál es el rango principal de distribución de los datos
+    <span id="estadisticas_calidad_inferencia"></span> La calidad de la
+    inferencia depende de las calidades de cada base por individuo en conjunto:
+    Si en general los individuos tienen bases de alta calidad en un sitio, la
+    calidad de la inferencia de los alelos durante la llamada de genotipos será
+    más alta y habrá más confianza en los datos. Si todas las bases en un sitio
+    tienen buenas calidades podemos observar puntajes muy altos (~1000).
+
+    ``` r
+    ### Cargamos los datos de calidad de inferencia de la información en un sitio
+    datos_calidad_sitio <- read_tsv("heliconius.optixscaf.2.lqual")
+
+    ### Pintamos un histograma de la profundidad por sitio
+    ggplot(datos_calidad_sitio, aes(x=QUAL)) + geom_histogram() +
+      labs(x="Calidad. x sitio", y="Conteo")
+    ```
+
+    El resultado debe verse así:
+
+    ![](../Imagenes/calidades_sitio.png)
+
+
+Preguntas: ¿Cuál es el rango principal de distribución de los datos
     de profundidad? ¿Por qué el eje x tiene su límite derecho tan lejos?
 
     Normalmente se considera que en un experimento de secuenciación la
@@ -870,7 +894,7 @@ trabajar.
     sitios cuyas profundidades promedio estén en el intervalo
     5 ≤ *p**r**o**f**u**n**d**i**d**a**d* ≤ 50.
 
-4.  :warning: **Estadísticas por individuo: Profundidad promedio**
+5.  :warning: **Estadísticas por individuo: Profundidad promedio**
 
     Los datos de estadísticas por individuo no son muy grandes entonces
     podemos verlos sin necesidad de una gráfica. Sin embargo, vamos a
@@ -894,7 +918,7 @@ trabajar.
     individuos cuyos promedios de profundidad están por debajo de 3
     podríamos considerar excluirlos del análisis.
 
-5.  :warning: **Estadísticas por individuo: Datos perdidos**
+6.  :warning: **Estadísticas por individuo: Datos perdidos**
 
     Exploremos el porcentaje de datos perdidos que cada individuo tiene
     en la region `Hmel218003o:1-1500000`.
