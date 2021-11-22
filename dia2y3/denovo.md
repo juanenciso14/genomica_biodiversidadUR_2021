@@ -201,9 +201,9 @@ El programa *tsv2bam* transpondrá los datos para que estén orientados por locu
 
 ⚠️ <span style="color:red">reportar línea de comando</spam> ⚠️
 
-**Memoria necesaria:** ~600mb
+**Memoria necesaria:** ~1Gb
 
-**Tiempo de ejecución:** ~4min
+**Tiempo de ejecución:** ~1min
 
 **Output:** archivo BAM estándar para cada muestra
 
@@ -219,13 +219,14 @@ El programa *gstacks* examinará un conjunto de datos RAD observando a todos los
 
 **Parámetros:**  
 `-P` = directorio de entrada que contiene archivos `*.matches.bam` creados por el pipeline *de novo* de Stacks (`01_stacks`).  
-`-M,--popmap` = ruta a un mapa de población.
+`-M,--popmap` = ruta a un mapa de población.  
+`-t` = habilitar la ejecución paralela con número de subprocesos (predeterminado 1, usaremos 2).
 
 ⚠️ <span style="color:red">reportar línea de comando</spam> ⚠️
 
 **Memoria necesaria:** ~350mb
 
-**Tiempo de ejecución:** ~15min
+**Tiempo de ejecución:** ~5min
 
 **Output:** `catalog.fa.gz` que contiene la secuencia de consenso para cada locus ensamblado en los datos, y `catalog.calls`, que és un archivo personalizado que contiene los datos del genotipado (+.log).
 
@@ -243,26 +244,26 @@ El programa *populations* analizará una población de muestras individuales cal
 
 **Parámetros:**   
 `-P,--in_path` = directorio de entrada que tenga los archivos generados por Stacks (`01_stacks`).  
-`-O,--out_path` = ruta a un directorio donde escribir los archivos de salida. (predeterminado al valor de -P.)  
-`-M,--popmap` = ruta a un mapa de población (lo mismo que se usó antes)  
-`-t,--threads` = habilitar la ejecución paralela con número de subprocesos (predeterminado 1, usaremos 2)  
-`-p,--min-populations [int]` = número mínimo de poblaciones en las que debe estar presente un locus para ser procesado (usaremos 2)
-`-r,--min-samples-per-pop [float]` = porcentaje mínimo de individuos en una población requerido para procesar un locus para esa población (usaremos 0.8)  
-`-R,--min-samples-overall [float]` = porcentaje mínimo de individuos en poblaciones requerido para procesar un locus (usaremos 0.8)  
-`--min-mac [int]` = especificar el número mínimo de muestras que un alelo tiene que estar presente para procesar un SNP (aplicado a la metapoblación, usaremos 2)  
-`--max-obs-het [float]` = especificar la heterocigosidad máxima observada requerida para procesar un sitio de nucleótidos en un locus (aplicado a la metapoblación, usaremos 0.5)  
+`-O,--out_path` = ruta a un directorio donde escribir los archivos de salida (predeterminado al valor de -P).  
+`-M,--popmap` = ruta a un mapa de población (lo mismo que se usó antes).  
+`-t,--threads` = habilitar la ejecución paralela con número de subprocesos (predeterminado 1, usaremos 2).  
+`-p,--min-populations [int]` = número mínimo de poblaciones en las que debe estar presente un locus para ser procesado (usaremos 2).  
+`-r,--min-samples-per-pop [float]` = porcentaje mínimo de individuos en una población requerido para procesar un locus para esa población (usaremos 0.8).  
+`-R,--min-samples-overall [float]` = porcentaje mínimo de individuos en poblaciones requerido para procesar un locus (usaremos 0.8).  
+`--min-mac [int]` = especificar el número mínimo de muestras que un alelo tiene que estar presente para procesar un SNP (aplicado a la metapoblación, usaremos 2).  
+`--max-obs-het [float]` = especificar la heterocigosidad máxima observada requerida para procesar un sitio de nucleótidos en un locus (aplicado a la metapoblación, usaremos 0.5).  
 
-`--write-random-snp` = restringir el análisis de datos a un SNP aleatorio por locus  
-`--fstats` = habilitar estadísticas basadas en SNPs y las F basadas en haplotipos  
-`--vcf` = output SNPs y haplotipos en  Variant Call Format (VCF)  
-`--structure` = output los resultados en el formato de Structure  
-`--plink` = output genotipos en formato PLINK  
+`--write-random-snp` = restringir el análisis de datos a un SNP aleatorio por locus.  
+`--fstats` = habilitar estadísticas basadas en SNPs y las F basadas en haplotipos.  
+`--vcf` = output SNPs y haplotipos en  Variant Call Format (VCF).  
+`--structure` = output los resultados en el formato de Structure.  
+`--plink` = output genotipos en formato PLINK.  
 
 Para este conjunto de datos, vamos a correr *populations* dos veces. En la primera corrida, se usarán todos los SNPs para calcular estadísticas sumarias, por tanto, usaremos el flag `--fstats`. Sin embargo, no utilizaremos los flags: `--write-random-snp`, `--vcf`, `--structure` y `--plink`. Para la segunda corrida, si se usara el flag `--write-random-snp` y los flags que nos generan los outputs `--vcf`, `--structure` y `--plink`, pero no `-—fstats`. Crea una carpeta para cada corrida y pon la ruta respectiva en el flag `-O`
 
 ⚠️ <span style="color:red">reportar líneas de comando</spam> ⚠️
 
-**Memoria necesaria:** ~1gb
+**Memoria necesaria:** ~100mb
 
 **Tiempo de ejecución:** <1min
 
