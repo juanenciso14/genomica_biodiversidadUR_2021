@@ -251,12 +251,12 @@ Es buena práctica hacer anotaciones y comentarios de los comandos que
 usa, utilice el caracter `#` para crear comentarios en sus archivos de
 texto.
 
-1.  Cree un directorio de trabajo en una ubicación a la que pueda
+1.  :warning: Cree un directorio de trabajo en una ubicación a la que pueda
     acceder fácilmente y asegúrese de que pueda acceder a él usando la
     interfaz gráfica y la línea de comandos.
 
-2.  Navegue hacia su directorio de trabajo usando la línea de comandos y
-    descargue allí el archivo
+2.  :warning: Navegue hacia su directorio de trabajo usando la línea de comandos
+    y descargue allí el archivo
     [`linea_comando.zip`](https://github.com/juanenciso14/genomica_biodiversidadUR_2021/blob/main/material/linea_comando.zip?raw=true)
     usando `wget`.
 
@@ -264,31 +264,31 @@ texto.
     nombre que le quiere dar al archivo. Si no lo renombra tendrá la
     extensión `?raw=true`, la cual no queremos.
 
-3.  Descomprima el archivo que descargó usando la herramienta
+3.  :warning: Descomprima el archivo que descargó usando la herramienta
     `unzip`. ¿Qué resulta de hacer esta operación? ¿Qué tipo de objeto es
     `linea_comando`?
 
-4.  Vaya a su carpeta home :house:.
+4.  :warning: Vaya a su carpeta home :house:.
 
-5.  Vaya a la carpeta `linea_comando` usando una <u>ruta absoluta</u>.
+5.  :warning: Vaya a la carpeta `linea_comando` usando una <u>ruta absoluta</u>.
 
-6.  Vaya al directorio `carpeta_4` dentro de `linea_comando` usando una
+6.  :warning: Vaya al directorio `carpeta_4` dentro de `linea_comando` usando una
     <u>ruta relativa</u>.
 
-7.  Usando un solo comando y una <u>ruta relativa</u>, vaya al directorio
+7.  :warning: Usando un solo comando y una <u>ruta relativa</u>, vaya al directorio
     `ssubcarpeta2.2.2`. ¿Cuál es la ruta absoluta al directorio?
 
-8.  Usando un solo comando y una <u>ruta relativa</u> vaya al directorio
+8.  :warning: Usando un solo comando y una <u>ruta relativa</u> vaya al directorio
     `subCarpeta1.2`
 
-9.  Usando un solo comando y la <u>ruta absoluta</u> vaya a
+9.  :warning: Usando un solo comando y la <u>ruta absoluta</u> vaya a
     `subCarpeta3.1`
 
-10. Vuelva a :house: utilizando una ruta relativa.
+10. :warning: Vuelva a :house: utilizando una ruta relativa.
 
 ## Creación de directorios y archivos
 
--   [ ] Replique la creación de `linea_comando` con todo su contenido.
+-   [ ] :warning: Replique la creación de `linea_comando` con todo su contenido.
     Algunos archivos están vacíos y otros contienen texto plano. Replique
     el contenido de estos archivos usando un editor de texto o el
     comando `echo` y el operador de re-dirección. Documente en su
@@ -311,32 +311,32 @@ texto.
 
 ## Copia, movimiento y deleción de directorios y archivos
 
-1.  Vaya a su carpeta :house:
+1.  :warning: Vaya a su carpeta :house:
 
-2.  Vaya a `linea_comando` usando una ruta relativa.
+2.  :warning: Vaya a `linea_comando` usando una ruta relativa.
 
-3.  Cree un archivo llamado `lista_carpetas.txt` que contenga la lista
+3.  :warning: Cree un archivo llamado `lista_carpetas.txt` que contenga la lista
     de carpetas dentro de `linea_comando` ¿Cómo ignorar los archivos y
     quedarse solo con las carpetas? Consulte la ayuda de `ls` usando
     `man`.
 
-4.  Mueva `archivo2.1.2.2.txt` y `Archivo2.1.2.3.txt` a `subcarpeta3.1`
-    usando rutas relativas y un solo comando.
+4.  :warning: Mueva `archivo2.1.2.2.txt` y `Archivo2.1.2.3.txt` a
+    `subcarpeta3.1` usando rutas relativas y un solo comando.
 
-5.  Copie `archivo1.2.1.txt` y `archivo1.2.2.txt` a `subcarpeta2.2`. Use
-    un solo comando.
+5.  :warning: Copie `archivo1.2.1.txt` y `archivo1.2.2.txt` a `subcarpeta2.2`.
+    Use un solo comando.
 
-6.  Copie el directorio `ssubcarpeta2.1.2` con todo su contenido a
+6.  :warning: Copie el directorio `ssubcarpeta2.1.2` con todo su contenido a
     `carpeta_4` en un solo comando. ¿Encuentra errores? Consulte el
     manual de `cp` para recordar la opción apropiada que debe utilizar.
 
-7.  Borre el directorio `subCarpeta1.2` con todo su contenido en un solo
+7.  :warning: Borre el directorio `subCarpeta1.2` con todo su contenido en un solo
     comando. Utilice la opción de verificación de la herramienta usada
     para borrar.
 
-8.  Cree dos archivos vacíos en `carpeta_4` y nómbrelos como quiera.
+8.  :warning: Cree dos archivos vacíos en `carpeta_4` y nómbrelos como quiera.
 
-9.  Vaya un nivel arriba del directorio `linea_comando`. Comprima la
+9.  :warning: Vaya un nivel arriba del directorio `linea_comando`. Comprima la
     carpeta `linea_comando` usando el comando
     `zip -r linea_comando_<nombre>.zip
             linea_comando` donde `<nombre>` es su nombre. Recuerde no
