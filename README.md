@@ -1,5 +1,25 @@
----
----
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+# Índice
+
+- [Estructura del curso](#estructura-del-curso)
+    - [Día 1](#día-1)
+    - [Días 2 y 3](#días-2-y-3)
+    - [Día 4](#día-4)
+    - [Día 5](#día-5)
+- [Recomendaciones](#recomendaciones)
+    - [Instalación de herramientas](#instalación-de-herramientas)
+    - [Asistencia](#asistencia)
+    - [Trabajo de clase](#trabajo-de-clase)
+    - [Queremos conocer tu opinión](#queremos-conocer-tu-opinión)
+        - [Encuesta día 1](#encuesta-día-1)
+        - [Encuesta día 2](#encuesta-día-2)
+        - [Encuesta día 3](#encuesta-día-3)
+        - [Encuesta día 4](#encuesta-día-4)
+        - [Encuesta día 5](#encuesta-día-5)
+        - [Encuesta final](#encuesta-final)
+
+<!-- markdown-toc end -->
+
 
 # Estructura del curso
 
