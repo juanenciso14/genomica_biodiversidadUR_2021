@@ -413,7 +413,7 @@ Debes enviar el script que escribas para hacer el alineamiento.
 
     ``` shell
     #!/bin/bash
-    #SBATCH -p normal
+    #SBATCH -p dev
     #SBATCH -n 2
     #SBATCH --mem=4000
     #SBATCH --time=0-12:00
@@ -537,7 +537,7 @@ anterior. :warning: Debes enviar el script que crees para remover duplicados.
 
     ``` shell
     #!/bin/bash
-    #SBATCH -p normal
+    #SBATCH -p dev
     #SBATCH -n 2
     #SBATCH --mem=4000
     #SBATCH --time=0-12:00
