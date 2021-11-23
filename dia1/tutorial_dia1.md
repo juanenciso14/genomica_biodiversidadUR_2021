@@ -524,7 +524,7 @@ A partir del paso 4 trabaje en una sesión interactiva. :warning: Debe enviarnos
 el script que escriba en `nano`.
 
 1.  Solicite recursos para ejecutar el trabajo. Use las directivas
-    `#SBATCH` en el inicio de su script para enviar a la cola `normal`,
+    `#SBATCH` en el inicio de su script para enviar a la cola `dev`,
     solicita un solo procesador, 50MB de memoria RAM y 1h de tiempo de
     ejecución. No olvide incluir el `shebang`!.
 
