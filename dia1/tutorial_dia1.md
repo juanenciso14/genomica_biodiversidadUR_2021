@@ -553,7 +553,7 @@ el script que escriba en `nano`.
     ```
 
 6.  :warning: Copie el archivo resultante (`bash_loops1.tar.gz`) a su máquina
-    personal usando `scp` (haz esto desde su máquina). La sintáxis para copiar
+    personal usando `scp` (haga esto desde su máquina). La sintáxis para copiar
     archivos usando `scp` desde/hacia CENTAURO es:
 
     ``` shell
