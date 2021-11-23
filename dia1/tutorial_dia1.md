@@ -349,7 +349,7 @@ texto.
 ## Genes con nombres duplicados
 
 El archivo
-[`genes_ch1_mus_musculus.txt`](./material/genes_ch1_mus_musculus.txt)
+[`genes_ch1_mus_musculus.txt`](../material/genes_ch1_mus_musculus.txt)
 contiene identificadores de los genes del cromosoma 1 de *Mus musculus*
 en la primera columna y los nombres comunes de estos genes en la segunda
 columna. Algunos genes tienen nombres repetidos en la derecha. El
@@ -393,7 +393,7 @@ la solución.
 Cuando se hacen experimentos de secuenciación a gran escala normalmente
 se agregan etiquetas moleculares para poder identificar las muestras
 correctamente al momento de procesar los datos. El archivo
-[`tags_seqs.txt.gz`](./material/tags_seqs.txt.gz) contiene dos columnas:
+[`tags_seqs.txt.gz`](../material/tags_seqs.txt.gz) contiene dos columnas:
 En la columna izquierda hay identificadores moleculares únicos para cada
 individuo. Estos tienen el formato `secuencia1-secuencia2`, las dos
 secuencias en conjunto se usan para identificar diferentes detalles del
@@ -509,7 +509,7 @@ patrón que queremos encontrar.
 
 ## La cola de trabajo
 
-El archivo [`bash_loops1.tar.gz`](./material/bash_loops1.tar.gz) fue creado con
+El archivo [`bash_loops1.tar.gz`](../material/bash_loops1.tar.gz) fue creado con
 la herramienta `tar` y contiene varias carpetas, cada una de ellas contiene un
 archivo de texto con un mensaje. Descomprima el archivo usando `tar` con las
 opciones `-z`, `-x` y `-f` para poder explorar la estructura de directorios
@@ -618,7 +618,7 @@ La descarga desde SRA es un poco más compleja y está fuera del alcance
 de este curso.
 
 El archivo
-[`lista_muestras_descarga.txt`](./material/lista_muestras_descarga.txt)
+[`lista_muestras_descarga.txt`](../material/lista_muestras_descarga.txt)
 contiene cuatro columnas con la siguiente información: i. Especie
 abreviada ii. Subespecie abreviada iii. Identificador de muestra y iv.
 Identificador de secuencia. **En su máquina local haga lo siguiente**.
@@ -680,7 +680,7 @@ Identificador de secuencia. **En su máquina local haga lo siguiente**.
 
     Dele un nombre informativo a su archivo. Puede usar la información
     que encuentra en
-    [`lista_muestras_descarga.txt`](./material/lista_muestras_descarga.txt)
+    [`lista_muestras_descarga.txt`](../material/lista_muestras_descarga.txt)
     de la siguiente forma: `especie.subespecie.R1.fastq.gz` o
     `especie.subespecie.R2.fastq.gz` dependiendo de si baja el primer
     (<sub>1</sub>) o el segundo (<sub>2</sub>) conjunto de secuencias.
