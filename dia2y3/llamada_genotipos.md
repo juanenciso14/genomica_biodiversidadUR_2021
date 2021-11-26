@@ -963,8 +963,8 @@ trabajar.
     filtro para retener los sitios que cumplen con esta condición (primer
     `filter`). Con estos sitios calculamos la frecuencia del alelo menos
     frecuente (`AF`, parte de `mutate`, `ifelse`, etc.). Luego, queremos retener
-    los sitios que tienen más de tres alelos menores, es decir, una valor de `AF
-    > 3/30` (0.1). También queremos retener sitios invariantes (`AF == 0`).
+    los sitios que tienen más de tres alelos menores, es decir, una valor de `AF > 3/30`
+    (0.1). También queremos retener sitios invariantes (`AF == 0`).
     Luego, creamos una nueva columna llamada `SNP_ID`, que es el resultado de
     unir las columnas `CHROM` y `POS` usando `:` como separador (parte de
     `mutate` y `paste`). Seleccionamos solo esa columna (`select`) y la
