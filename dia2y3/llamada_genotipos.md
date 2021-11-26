@@ -931,7 +931,7 @@ trabajar.
     datos_perdidos_indv <- read_tsv("heliconius.optixscaf.2.imiss")
 
     ### Pintando la grafica
-    ggplot(data=datos_perdidos_sitio, aes(x=INDV, y=F_MISS)) + geom_point() +
+    ggplot(data=datos_perdidos_indv, aes(x=INDV, y=F_MISS)) + geom_point() +
       labs(x="Individuo", y="% Datos perdidos") + 
       theme(axis.text.x = element_text(angle = 45, hjust=1))
     ```
