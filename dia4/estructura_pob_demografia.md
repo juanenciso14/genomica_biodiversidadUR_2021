@@ -158,7 +158,7 @@ a <- ggplot(lh_K, aes(x = K, y = CV_error)) +
 
 ```{r}
 #cargar la matrix Q para el K más probable
-q <- read.table("populations_cor.2.Q")
+q <- read.table("plink.2.Q")
 
 #plot
 barplot(t(as.matrix(q)), col = c("#ef8a62", "#91bfdb"), xlab = "Individual #", ylab = "Ancesrty")
